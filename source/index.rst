@@ -17,6 +17,7 @@ Contents:
    contributing
    faq
    resources
+   release_notes
 
 
 Indices and tables
