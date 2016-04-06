@@ -4,7 +4,7 @@ Installation
 
 
 Obtain Anaconda
-================
+===============
 
 .. note:: AstroConda packages are 64-bit only. We may consider building 32-bit binaries for Linux if there is a demand for it.
 
@@ -22,19 +22,16 @@ This will permanently add the repository to Conda's search path. Be aware that a
 `anaconda.org <https://anaconda.org>`_ repositories to this file may affect the stability of AstroConda's run-time
 environment.
 
-Use a plain-text editor to append the following to $HOME/.condarc:
-
 .. code-block:: sh
 
-    channels:
-      - astroconda
-      - defaults
+    $ conda config --add channels astroconda
+    # Writes changes to ~/.condarc
 
 
 Install AstroConda
 ==================
 
-Now that conda is configured to pull from our repository, you may now go ahead and install the ``astroconda``
+Now that Conda is configured to pull from our repository, you may now go ahead and install the ``astroconda``
 meta-package.
 
 .. code-block:: sh
