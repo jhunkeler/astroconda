@@ -14,6 +14,7 @@ Contents:
    whatis
    installation
    updating
+   package_manifest
    contributing
    faq
    resources
