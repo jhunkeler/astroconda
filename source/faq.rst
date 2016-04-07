@@ -27,7 +27,7 @@ Updates to (STScI) software will be released as bugs are identified and squashed
 "releases" (i.e. a set of software used by our internal pipelines). After installing a release it is then possible to upgrade to the latest
 out-of-band packages by simply running:
 
-```conda update -n astroconda --all```
+``conda update -n astroconda --all``
 
 Non-STScI software will be upgraded on an as-needed basis. See the `Contibuting Guide <contributing.html>`_ to learn more about asking
 for updates to existing packages.
