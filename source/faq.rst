@@ -20,6 +20,12 @@ which included every package in one giant tarball. If an end-user only really wa
 to install everything *and then some*. AstroConda is a *if the shoe fits wear it* distribution of packages. If an end-user
 needs ``HSTCAL``, for example, they can install ``HSTCAL`` and omit much of the rest of HST's software suite.
 
+A *major difference* most people will appreciate is the sheer lack of shell scripts. Ureka's environment was controlled by
+several dozen independent scripts. What makes AstroConda different? For one, it is not controlled by user-executed scripts.
+Changes to the environment are applied by special (read: embedded) scripts that are executed automatically by ``source activate``,
+and the environment variables are unset with every ``source deactivate``. This allows you to switch between several different
+environments rapidly without needing to keep track of what is defined in the environment.
+
 How often are updates released?
 ===============================
 
@@ -59,7 +65,7 @@ Why is IRAF/PyRAF less functional under Python 3?
 =================================================
 
 The Python code in ``stsdas``, for example, is targeted specifically for Python 2.7 and earlier. If the demand for Python 3
-support under IRAF is great enough we may be able pull our resources to accommodate the community. It is recommended to install
+support under IRAF is great enough we may be able to pull our resources to accommodate the community. It is recommended to install
 IRAF into its own environment under Python 2.7:
 
 ``conda create -n iraf27 python=2.7 iraf && source activate iraf27``
@@ -69,7 +75,8 @@ Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
 =============================================================================
 
 **Probably**, however unlike Ureka we will not impose any restrictions on your environment or issue compatibility warnings at run-time.
-It is your responsibility to maintain a functional shell environment so it does not conflict with your Anaconda installation.
+It is your responsibility to maintain a functional shell environment so [insert scientific distribution here] does not conflict with your Anaconda
+installation.
 
 
 
