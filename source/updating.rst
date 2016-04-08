@@ -9,7 +9,7 @@ packages installed in your Anaconda distribution will remain relatively static.
 Updating AstroConda
 ===================
 
-The update procedure for AstroConda is relatively straight foward.
+The update procedure for AstroConda is relatively straight forward.
 
 .. code-block:: sh
 
@@ -26,17 +26,17 @@ Downgrading Packages
 ====================
 
 Did a recent update break your code? Don't wait around for a bugfix... Keep working. For example, if a bug is introduced
-into ``stsci.tool``, you can easily downgrade it to a known-good version:
+into ``stsci.tools``, you can easily downgrade it to a known-good version:
 
 .. code-block:: sh
 
     $ conda search stsci.tools
-    .  3.4.0.git              py35_6  astroconda
-    *  3.4.1.git              py35_0  astroconda
+    .  3.4.0                  py35_6  astroconda
+    *  3.4.1                  py35_0  astroconda
 
 The ``*`` denotes the current version installed locally.
 
-Now the only thing left do is tell Conda to install the previous release of the package:
+Now the only thing left to do, is to tell Conda to install the previous release of the package:
 
 .. code-block:: sh
 
