@@ -9,17 +9,43 @@ packages installed in your Anaconda distribution will remain relatively static.
 Updating AstroConda
 ===================
 
-The update procedure for AstroConda is relatively straight forward.
+There are few simple ways to update packages obtained from AstroConda:
+
+Method One - Updating the Metapackage
+-------------------------------------
 
 .. code-block:: sh
 
-    # Will update all packages
-    $ conda update --all
+    $ conda update -n astroconda astroconda
 
-    # Will update packages if a new public release is present
-    $ conda update astroconda
+Updating the ``astroconda`` metapackage only effects packages that are part of the **official public release** of our software.
+Using this method, packages that are in the AstroConda repository, but not controlled by the ``astroconda`` metapackage,
+**will not receive updates**. Please use method two below.
+
+Method Two - Updating All Packages
+----------------------------------
+
+.. code-block:: sh
+
+    $ conda update -n astroconda --all
+
+This method will update the ``astroconda`` metapackage, as well all other packages installed in your enviroment.
+
+Please keep in mind, this updates **all packages** regardless if they were installed from AstroConda, Continuum, Inc.,
+or other third party repositories defined in ``$HOME/.condarc``.
 
 (`ref <http://conda.pydata.org/docs/using/pkgs.html#package-update>`__)
+
+
+Method Three - Updating Packages Individually
+---------------------------------------------
+
+.. code-block:: sh
+
+    $ conda update -n astroconda stsci.tools
+
+If you are interested in receiving updates for a particular package, then this method is for you. Be aware that packages
+may depend on other packages, so the total list returned by this command will be variable.
 
 
 Downgrading Packages
