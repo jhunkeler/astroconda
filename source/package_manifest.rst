@@ -2,47 +2,28 @@ Packages
 ========
 
 
+
+Packaging reference key:
+
+::
+
+    [package]-[version]-[glob]_[build_number]
+    ^Name     ^Version  ^      ^Conda package revision
+                        |
+                        npXXpyYY
+                          ^   ^
+                          |   |
+                          |   Compiled for Python version
+                          |
+                          Compiled for NumPY version
+
+
+
+
+
 linux-64 metapackages
 ------------------------
 
-
-- **stsci-1.0.0 (np110py35_0)**
-
-    - astropy >=1.1       
-
-    - cfitsio ==3.370     
-
-    - d2to1 ==0.2.12      
-
-    - ds9 ==7.4           
-
-    - fftw ==3.3.4        
-
-    - htc_utils >=0.1     
-
-    - imexam ==0.5.2      
-
-    - numpy 1.10*         
-
-    - photutils ==0.2.1   
-
-    - poppy ==0.4.0       
-
-    - purge_path >=0.0.1  
-
-    - pyds9 ==1.8.1       
-
-    - pyfftw ==0.9.2      
-
-    - python 3.5*         
-
-    - stsci-data-analysis 
-
-    - stsci-hst           
-
-    - webbpsf ==0.4.0     
-
-    - webbpsf-data ==0.4.0
 
 - **stsci-1.0.0 (np110py34_0)**
 
@@ -120,6 +101,44 @@ linux-64 metapackages
 
     - webbpsf-data ==0.4.0
 
+- **stsci-1.0.0 (np110py35_0)**
+
+    - astropy >=1.1       
+
+    - cfitsio ==3.370     
+
+    - d2to1 ==0.2.12      
+
+    - ds9 ==7.4           
+
+    - fftw ==3.3.4        
+
+    - htc_utils >=0.1     
+
+    - imexam ==0.5.2      
+
+    - numpy 1.10*         
+
+    - photutils ==0.2.1   
+
+    - poppy ==0.4.0       
+
+    - purge_path >=0.0.1  
+
+    - pyds9 ==1.8.1       
+
+    - pyfftw ==0.9.2      
+
+    - python 3.5*         
+
+    - stsci-data-analysis 
+
+    - stsci-hst           
+
+    - webbpsf ==0.4.0     
+
+    - webbpsf-data ==0.4.0
+
 - **stsci-data-analysis-1.0.0 (np110py27_0)**
 
     - asdf ==1.0.2        
@@ -140,26 +159,6 @@ linux-64 metapackages
 
     - stginga ==0.0.0     
 
-- **stsci-data-analysis-1.0.0 (np110py34_0)**
-
-    - asdf ==1.0.2        
-
-    - astroimtools ==0.1  
-
-    - astropy >=1.1       
-
-    - asv ==0.1.1         
-
-    - cube-tools ==0.0.0  
-
-    - numpy 1.10*         
-
-    - python 3.4*         
-
-    - specview ==0.1      
-
-    - stginga ==0.0.0     
-
 - **stsci-data-analysis-1.0.0 (np110py35_0)**
 
     - asdf ==1.0.2        
@@ -175,6 +174,26 @@ linux-64 metapackages
     - numpy 1.10*         
 
     - python 3.5*         
+
+    - specview ==0.1      
+
+    - stginga ==0.0.0     
+
+- **stsci-data-analysis-1.0.0 (np110py34_0)**
+
+    - asdf ==1.0.2        
+
+    - astroimtools ==0.1  
+
+    - astropy >=1.1       
+
+    - asv ==0.1.1         
+
+    - cube-tools ==0.0.0  
+
+    - numpy 1.10*         
+
+    - python 3.4*         
 
     - specview ==0.1      
 
@@ -474,6 +493,8 @@ linux-64 packages
 
 - reftools-1.7.1
 
+- relic-1.0.4
+
 - shunit2-2.0.3
 
 - specview-0.1
@@ -529,44 +550,6 @@ linux-64 packages
 osx-64 metapackages
 ------------------------
 
-
-- **stsci-1.0.0 (np110py35_0)**
-
-    - astropy >=1.1       
-
-    - cfitsio ==3.370     
-
-    - d2to1 ==0.2.12      
-
-    - ds9 ==7.4           
-
-    - fftw ==3.3.4        
-
-    - htc_utils >=0.1     
-
-    - imexam ==0.5.2      
-
-    - numpy 1.10*         
-
-    - photutils ==0.2.1   
-
-    - poppy ==0.4.0       
-
-    - purge_path >=0.0.1  
-
-    - pyds9 ==1.8.1       
-
-    - pyfftw ==0.9.2      
-
-    - python 3.5*         
-
-    - stsci-data-analysis 
-
-    - stsci-hst           
-
-    - webbpsf ==0.4.0     
-
-    - webbpsf-data ==0.4.0
 
 - **stsci-1.0.0 (np110py34_0)**
 
@@ -644,6 +627,44 @@ osx-64 metapackages
 
     - webbpsf-data ==0.4.0
 
+- **stsci-1.0.0 (np110py35_0)**
+
+    - astropy >=1.1       
+
+    - cfitsio ==3.370     
+
+    - d2to1 ==0.2.12      
+
+    - ds9 ==7.4           
+
+    - fftw ==3.3.4        
+
+    - htc_utils >=0.1     
+
+    - imexam ==0.5.2      
+
+    - numpy 1.10*         
+
+    - photutils ==0.2.1   
+
+    - poppy ==0.4.0       
+
+    - purge_path >=0.0.1  
+
+    - pyds9 ==1.8.1       
+
+    - pyfftw ==0.9.2      
+
+    - python 3.5*         
+
+    - stsci-data-analysis 
+
+    - stsci-hst           
+
+    - webbpsf ==0.4.0     
+
+    - webbpsf-data ==0.4.0
+
 - **stsci-data-analysis-1.0.0 (np110py27_0)**
 
     - asdf ==1.0.2        
@@ -664,26 +685,6 @@ osx-64 metapackages
 
     - stginga ==0.0.0     
 
-- **stsci-data-analysis-1.0.0 (np110py34_0)**
-
-    - asdf ==1.0.2        
-
-    - astroimtools ==0.1  
-
-    - astropy >=1.1       
-
-    - asv ==0.1.1         
-
-    - cube-tools ==0.0.0  
-
-    - numpy 1.10*         
-
-    - python 3.4*         
-
-    - specview ==0.1      
-
-    - stginga ==0.0.0     
-
 - **stsci-data-analysis-1.0.0 (np110py35_0)**
 
     - asdf ==1.0.2        
@@ -699,6 +700,26 @@ osx-64 metapackages
     - numpy 1.10*         
 
     - python 3.5*         
+
+    - specview ==0.1      
+
+    - stginga ==0.0.0     
+
+- **stsci-data-analysis-1.0.0 (np110py34_0)**
+
+    - asdf ==1.0.2        
+
+    - astroimtools ==0.1  
+
+    - astropy >=1.1       
+
+    - asv ==0.1.1         
+
+    - cube-tools ==0.0.0  
+
+    - numpy 1.10*         
+
+    - python 3.4*         
 
     - specview ==0.1      
 
@@ -984,6 +1005,14 @@ osx-64 packages
 
 - pyfftw-0.9.2
 
+- pyobjc-core-3.1.1
+
+- pyobjc-framework-cocoa-3.1.1
+
+- pyobjc-framework-quartz-3.1.1
+
+- pyraf-2.1.10
+
 - pyregion-1.1.2
 
 - pysynphot-0.9.8.2
@@ -995,6 +1024,8 @@ osx-64 packages
 - recon-1.0.2
 
 - reftools-1.7.1
+
+- relic-1.0.4
 
 - shunit2-2.0.3
 
