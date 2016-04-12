@@ -10,21 +10,14 @@ Contents:
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
    whatis
    installation
    updating
-   package_manifest
-   contributing
    faq
-   resources
+   contributing
+   package_manifest
    release_notes
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   resources
 
