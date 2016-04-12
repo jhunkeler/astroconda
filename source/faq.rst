@@ -12,6 +12,15 @@ Anaconda does not support CSH (C-Shell). Please switch to a POSIX-compatible she
     STScI will not maintain a separate codebase of Anaconda's backend ``conda`` in order to implement CSH support. Feel free to
     create an issue with the `developers <http://github.com/conda/conda/issues>`_.
 
+I installed AstroConda into my Anaconda 'root' environment. What now?
+=====================================================================
+
+Please reinstall Anaconda from scratch. AstroConda uses ``source activate`` and ``source deactivate`` calls to control your shell
+environment. The Anaconda 'root' environment **does not** use this feature, and thus, the packages you have installed there will not work properly.
+To clarify, it is impossible to execute ``source activate root``. Installing AstroConda packages directly into the 'root' may cause
+Anaconda itself to be come unstable. In addition to this, removing packages from this environment is tedious and will likely break
+your Anaconda installation if you are not careful. *Reinstalling from scratch is the safest option.*
+
 How does AstroConda differ from Ureka?
 ======================================
 
