@@ -49,7 +49,7 @@ Gemini Observatory
 Anaconda (Continuum, Inc.)
 ==========================
 
-.. note::
+.. important::
 
     AstroConda is not affiliated with Continuum, Inc. or its partners.
 
