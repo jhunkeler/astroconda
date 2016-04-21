@@ -83,7 +83,7 @@ IRAF into its own environment under Python 2.7:
 Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
 =============================================================================
 
-**Probably**, however unlike Ureka we will not impose any restrictions on your environment or issue compatibility warnings at run-time.
+**Probably**, however unlike Ureka, we do not impose any restrictions on your environment or issue compatibility warnings at run-time.
 It is your responsibility to maintain a functional shell environment so [insert scientific distribution here] does not conflict with your Anaconda
 installation.
 
