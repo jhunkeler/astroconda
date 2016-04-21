@@ -21,6 +21,7 @@ will be provided by STScI by emailing `help@stsci.edu <mailto:help@stsci.edu>`_.
 ~~~~~~~~~~~~~~~~~~
 General Disclaimer
 ~~~~~~~~~~~~~~~~~~
+
 ::
 
     THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS''
@@ -35,3 +36,4 @@ General Disclaimer
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
     OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
     SUCH DAMAGE.
+
