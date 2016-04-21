@@ -29,33 +29,33 @@ Configure Conda
 
 In order to install packages directly from the AstroConda repository, you will need to configure Anaconda to do so.
 This will permanently add the repository to Conda's search path. Be aware that adding additional
-`anaconda.org <https://anaconda.org>`_ repositories to this file may affect the stability of AstroConda's run-time
+`anaconda.org <https://anaconda.org>`_ or direct-url repositories may affect the stability of AstroConda's run-time
 environment.
 
 .. code-block:: sh
 
-    $ conda config --add channels astroconda
+    $ conda config --add channels http://ssb.stsci.edu/astroconda
     # Writes changes to ~/.condarc
 
 
 Install AstroConda
 ==================
 
-Now that Conda is configured to pull from our repository, you may now go ahead and install the ``astroconda``
-meta-package.
+Now that Conda is configured to pull from our repository, you may now go ahead and install the ``stsci`` metapackage.
+The example below will generate a new environment called "astroconda" (using the ``-n`` flag),
+however, this is merely a suggestion. Feel free to use a name that works best for you.
 
 .. code-block:: sh
 
-    $ conda create -n astroconda astroconda
+    $ conda create -n astroconda stsci
     $ source activate astroconda
-
 
 
 Fine-tuning the installation
 ============================
 
 If you are short on hard drive space, have a slow internet connection, or are simply not interested in installing
-*everything but the kitchen sink*; please feel free to peruse the `manifest <http://ssb.stsci.edu/conda>`_ and
+*everything but the kitchen sink*; please feel free to peruse the `manifest <http://ssb.stsci.edu/astroconda>`_ and
 install a custom mix of packages *tailored to your needs*.
 
 .. code-block:: sh
