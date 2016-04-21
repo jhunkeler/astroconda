@@ -18,8 +18,8 @@ Method One - Updating the Metapackage
 
     $ conda update -n astroconda astroconda
 
-Updating the ``astroconda`` metapackage only effects packages that are part of the **official public release** of our software.
-Using this method, packages that are in the AstroConda repository, but not controlled by the ``astroconda`` metapackage,
+Updating the ``stsci`` metapackage only effects packages that are part of the **official public release** of our software.
+Using this method, packages that are in the AstroConda repository, but not controlled by the ``stsci`` metapackage,
 **will not receive updates**. Please use method two below.
 
 Method Two - Updating All Packages
@@ -29,7 +29,7 @@ Method Two - Updating All Packages
 
     $ conda update -n astroconda --all
 
-This method will update the ``astroconda`` metapackage, as well all other packages installed in your enviroment.
+This method will update the ``stsci`` metapackage, as well all other packages installed in your enviroment.
 
 Please keep in mind, this updates **all packages** regardless if they were installed from AstroConda, Continuum, Inc.,
 or other third party repositories defined in ``$HOME/.condarc``.
@@ -57,8 +57,8 @@ into ``stsci.tools``, you can easily downgrade it to a known-good version:
 .. code-block:: sh
 
     $ conda search stsci.tools
-    .  3.4.0                  py35_6  astroconda
-    *  3.4.1                  py35_0  astroconda
+    .  3.4.0                  py35_6  http://ssb.stsci.edu/astroconda/linux-64
+    *  3.4.1                  py35_0  http://ssb.stsci.edu/astroconda/linux-64
 
 The ``*`` denotes the current version installed locally.
 
