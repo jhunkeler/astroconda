@@ -13,7 +13,7 @@ AstroConda
 
 - https://groups.google.com/forum/#!forum/astroconda
 
-**Support**
+**Recipe Support**
 
 - `Issue tracker <https://github.com/astroconda/astroconda-contrib/issues>`_
 
@@ -25,7 +25,7 @@ Space Telescope Science Institute
 
 - https://github.com/spacetelescope
 
-**Main portal**
+**Main Portal**
 
 - http://www.stsci.edu
 
@@ -33,7 +33,7 @@ Space Telescope Science Institute
 
 - http://ssb.stsci.edu
 
-**Support**
+**Science Software Support**
 
 - `help@stsci.edu <mailto:help@stsci.edu>`_
 
