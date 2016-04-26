@@ -11,41 +11,42 @@ Updating AstroConda
 
 There are few simple ways to update packages obtained from AstroConda:
 
-Method One - Updating the Metapackage
--------------------------------------
+Updating the Release
+--------------------
 
 .. code-block:: sh
 
-    $ conda update -n astroconda astroconda
+    $ conda update -n astroconda stsci
 
-Updating the ``stsci`` metapackage only effects packages that are part of the **official public release** of our software.
-Using this method, packages that are in the AstroConda repository, but not controlled by the ``stsci`` metapackage,
-**will not receive updates**. Please use method two below.
+This is best used by individuals that favor software stability over receiving the "bleeding edge". Remember, updating the
+``stsci`` metapackage only effects packages part of the **official public release** of our software. Packages that are
+provided by the AstroConda repository, but are not controlled by the ``stsci`` metapackage **will not receive updates**.
+This holds true for all other metapackages as well (e.g. stsci-hst, stsci-jwst, stsci-data-analysis, etc).
 
-Method Two - Updating All Packages
-----------------------------------
+Updating All Packages
+---------------------
 
 .. code-block:: sh
 
     $ conda update -n astroconda --all
 
-This method will update the ``stsci`` metapackage, as well all other packages installed in your enviroment.
+This will update the ``stsci`` metapackage, as well all other packages installed in your enviroment. [1]_
 
-Please keep in mind, this updates **all packages** regardless if they were installed from AstroConda, Continuum, Inc.,
+This updates **all packages** regardless if they were installed from AstroConda, Continuum, Inc.,
 or other third party repositories defined in ``$HOME/.condarc``.
 
 (`ref <http://conda.pydata.org/docs/using/pkgs.html#package-update>`__)
 
 
-Method Three - Updating Packages Individually
----------------------------------------------
+Updating Packages Individually
+------------------------------
 
 .. code-block:: sh
 
     $ conda update -n astroconda stsci.tools
 
 If you are interested in receiving updates for a particular package, then this method is for you. Be aware that packages
-may depend on other packages, so the total list returned by this command will be variable.
+may depend on other packages, so the total list of package updates returned by this command will vary.
 
 
 Downgrading Packages
@@ -92,3 +93,8 @@ a clear side-effect of this will also be losing the ability to update packages t
 Although this is not a permanent solution it can prove useful in a bad situation.
 
 (`ref <http://conda.pydata.org/docs/faq.html?highlight=pinning#pinning-packages>`__)
+
+
+.. rubric:: Footnotes
+
+.. [1] (STScI-Specific) "Updating All Packages" now assumes the role of "SSBX" in the AstroConda distribution model.
