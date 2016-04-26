@@ -2,18 +2,12 @@
 Installation
 ############
 
-.. note::
-
-    **Keep the following in mind**
+.. admonition:: Keep the following in mind
 
     - AstroConda supports Linux (>=glibc-2.12) and OS X (>= 10.7; 10.6 is NOT supported); Running Python 2.7, 3.4, or 3.5.
     - If IRAF is required as part of your personal workflow it is *highly recommended* you install Anaconda2 (`FAQ <faq.html#why-is-iraf-pyraf-less-functional-under-python-3>`_).
     - Otherwise choose the Anaconda installer best suited for your scripting needs.
-
-.. note::
-
-    This documentation specifically targets Anaconda3 installations.
-    However, the same commands should still work interchangeably between versions.
+    - This documentation specifically targets Anaconda3 installations. However, the same commands should still work interchangeably between versions.
 
 Obtain Anaconda
 ===============
