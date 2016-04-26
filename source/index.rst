@@ -12,7 +12,7 @@ in Baltimore, Maryland. This repository provides tools and utilities commonly us
 The components provided through the `astroconda <http://ssb.stsci.edu/astroconda>`_ channel on `ssb.stsci.edu <http://ssb.stsci.edu>`_
 include most of the tools the user needs to work with Hubble Space Telescope (HST) data and data from other telescopes in
 a single Anaconda Python environment.  Each of the components contains sets of packages which have also been built and tested
-to insure that they work with each other in the same environment.
+to ensure that they work with each other in the same environment.
 
 
 .. toctree::
