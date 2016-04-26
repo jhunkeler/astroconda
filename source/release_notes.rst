@@ -4,6 +4,15 @@ Release Notes
 ACSTOOLS
 --------
 
+ACSTOOLS v2.0.1 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-04-25 15:51:47+00:00*
+
+Bug fix release with a fix for satellite detection algorithm.
+
+References: #3, #4, FootPrints Ticket 8763.
+
 ACSTOOLS v2.0.0 Release Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -468,6 +477,13 @@ Pre-release for May2015 JWST DA User Training
 
 SPECVIZ
 -------
+
+v0.1.1rc3
+~~~~~~~~~
+
+*2016-04-20 15:50:23+00:00*
+
+Minor bug fixes.
 
 v0.1rc3
 ~~~~~~~
