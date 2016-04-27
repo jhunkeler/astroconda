@@ -7,6 +7,23 @@ Contributing Guide
 
     A `GitHub <https://github.com>`_ account is required to begin contributing to AstroConda
 
+
+Guidelines
+==========
+
+    The following packaging guidelines are subject to change at any time.
+
+    - Please be respectful when commenting on pull-requests or issues.
+    - If your contribution is not accepted into AstroConda, as a general courtesy, you will be given a clear and concise reason.
+    - As a contributor you may not claim exclusive rights to a particular recipe.
+    - You are free to maintain a recipe in AstroConda by issuing regular pull requests.
+    - Everyone is welcome to improve upon recipes so long they do not introduce packaging conflicts.
+    - Abandoned recipes may be moved into the ``deprecated`` directory at any time without warning. (i.e. The package no longer compiles,
+    has been obsoleted, or presents a conflict that cannot be resolved, etc).
+    - Packages derived from ``deprecated`` recipes will remain available in AstroConda for historical purposes (i.e. to preserve
+    backwards compatibility).
+
+
 Adding a recipe to astroconda-contrib
 =====================================
 
@@ -139,7 +156,7 @@ Fill in the ``about`` section with relevant information regarding the package:
         license: GPL
         summary: Python library for symbolic mathematics
 
-Next, modfy the ``source`` section's ``url`` variable so that it points to ``sympy``'s source archive (on the internet):
+Next, modfy the ``source`` section's ``url`` so that it points to ``sympy``'s source archive (on the internet):
 
 .. code-block:: sh
 
@@ -147,7 +164,163 @@ Next, modfy the ``source`` section's ``url`` variable so that it points to ``sym
         fn: {{ name }}-{{ version }}.tar.gz
         url: https://github.com/{{ name }}/{{ name }}/releases/download/{{ name }}-{{ version }}/{{ name }}-{{ version }}.tar.gz
 
-What's with the never-ending stream of bracket encapsulated keywords, you ask? JINJA2 provides basic string interpolation. If you
-decide to build, for example, ``sympy-1.1`` in the future, you need only modify the first two settings in this file (assuming
-the URL structure has not changed).
+What's with the never-ending stream of bracket encapsulated keywords, you ask? Conda uses JINJA2, a basic template system,
+to provide basic string interpolation within recipes. This comes in handy if, let's say, you decide to build a more recent version of ``sympy``,
+you need only modify the first two variable definitions in this file (assuming the URL structure has not changed).
 
+The ``requirements`` section may be confusing to some, so let's clarify the distinction between ``build`` and ``run`` before diving in.
+The ``build`` section defines Conda packages required at compile-time (i.e. ``python setup.py install``), whereas the ``run`` section
+lists Conda packages required at install-time (i.e. ``conda install [package]``).
+
+The processes of dependency discovery as a recipe maintainer is that of trial and error. For many Python packages obtained via
+PyPi, it is easy enough to visually examine ``setup.py`` or ``requirements.txt`` to get a good idea of the packages you need to
+incorporate into your recipe.
+
+As we can see below, ``sympy`` does not require dependencies beyond ``python`` itself. That's easy enough.
+
+.. code-block:: yaml
+
+    requirements:
+        build:
+        - python x.x
+        run:
+        - python x.x
+
+What does the ``x.x`` imply exactly? This instructs ``conda-build`` *not* to proceed unless ``python=[version]`` has
+been issued as an argument on the commandline. If ``x.x`` is omitted here, the recipe will choose the version of Python
+currently active in your environment. In most cases it is best to be explicit rather than implicit when it comes to defining
+version requirements in Conda.
+
+The ``test`` section defines few useful lists, ``imports``, ``commands``, and ``requires``. While these are not *required* to be used in any given recipe,
+we do use them in AstroConda. The ``imports`` section is a list of Python module imports, the ``commands`` are executed in a
+basic shell environment, and finally ``requires`` defines any extraneous packages to be installed into the enviroment before running the tests.
+
+.. code-block:: yaml
+
+    test:
+        imports:
+            - sympy
+
+        #commands:
+        #   - no shell commands to execute
+
+        #requires:
+        #   - does not require any extra testing-related packages
+
+If ``sympy`` provided a commandline utility named ``sympy-show``, you would use the ``commands`` section to verify
+the utility's functionality. A simple example of this would be to output a usage statement.
+
+.. code-block:: sh
+
+    test:
+        # ...
+        commands:
+            - sympy-show --help
+
+If a program returns greater than zero ``conda-build`` will fail as if it observed an error. Not all programs return zero after issuing
+``--help`` (or an equivalent argument). Due to this, you may need to omit this style of test.
+
+It will not hurt to keep the ``commands`` section
+populated but disabled with a note describing why it doesn't work. Others will find this information useful. Given this scenario, the
+optimal approach would be to contact the developers and plead with them to normalize the exit value.
+
+
+Below is our ``sympy`` final recipe. Despite the overwheming use of JINGA2 in our example, things are looking pretty streamlined.
+
+.. code-block:: none
+
+    {% set name = 'sympy' %}
+    {% set version = '1.0' %}
+
+    about:
+        home: http://sympy.org
+        license: GPL
+        summary: Python library for symbolic mathematics
+
+    source:
+        fn: {{ name }}-{{ version }}.tar.gz
+        url: https://github.com/{{ name }}/{{ name }}/releases/download/{{ name }}-{{ version }}/{{ name }}-{{ version }}.tar.gz
+
+    requirements:
+        build:
+        - python x.x
+        run:
+        - python x.x
+
+    test:
+        imports:
+            - sympy
+
+
+Before we can issue a pull request on Github to incorporate our new ``sympy`` recipe into astroconda-contrib, we first ensure it builds, tests,
+and installs properly on our local system. To do this we need to change our directory to one level above the recipe.
+
+.. code-block:: sh
+
+    cd ..
+    # i.e. /path/to/astroconda-contrib
+
+Now run ``conda-build`` to compile our ``sympy`` recipe into a Conda package. In the example below we are building against
+Python 3.5:
+
+.. code-block:: sh
+
+    conda-build -c http://ssb.stsci.edu/astroconda --skip-existing python=3.5 sympy
+
+That's probably a bit more involved than you thought. Let's break it down. We issue ``-c [URL]`` which instructs the build to utilize
+the AstroConda channel while checking for package dependencies (i.e. the recipe's ``requirements`` section). Secondly, we issue
+``--skip-existing`` to prevent ``conda-build`` from rebuilding dependencies discovered in the local astroconda-contrib directory.
+That is to say, if a package defined as a requirement exists remotely, it will then download and install it, rather than rebuild it from scratch.
+``python=`` is self-explanatory, and the final argument is the name of the recipe(s) we intend to build.
+
+At this point, if the build was successful, our Conda package (a bzipped tarball) called ``sympy-1.0_py35.tar.bz2`` is emitted to ``/path/to/anaconda/conda-bld/[os-arch]/``.
+This directory is a local Conda package repository.
+
+To install this new ``sympy`` package and interact with it ourselves you could run the following:
+
+.. code-block:: sh
+
+    conda create -n sympy_test --use-local sympy
+    source activate sympy_test
+
+Then manually verify the package is working:
+
+.. code-block:: sh
+
+    python
+
+And checking it out for yourself:
+
+.. code-block:: python
+
+    >>> import sympy
+    >>> sympy.__file__
+    '/path/to/anaconda/envs/sympy_test/lib/python3.5/site-packages/sympy/__init__.py'
+
+Now that you have verified the recipe is fully functional and are happy with the outcome, it's time to create a pull request
+against astroconda-contrib main repository.
+
+Push your ``sympy-contrib`` branch up to your fork on Github:
+
+.. code-block:: sh
+
+    git push origin sympy-contrib
+
+Now, using Github navigate to your ``astroconda-contrib`` fork, select the ``sympy-contrib`` branch from the drop-down menu (the default will read: "Branch: master", next to
+a black downward-pointing caret). Once selected, click the large green button labeled: "New pull request".
+From here, you may edit the title of the pull request and add any initial comments or notes regarding what you have done, or what you
+believe may still need to be done before a merge can be performed.
+
+After submitting your pull request, a member of the Science Software Branch at STScI, or fellow contributors will review the requested changes, comment, and if
+everything appears to be in order your recipe will be merged, built, and incorporated into AstroConda!
+
+Guidelines
+==========
+
+    - As a contributor you may not stake a claim to a particular recipe in the AstroConda repository. You are free to maintain a recipes
+    in AstroConda by issuing regular pull requests against them, however, please recognize that everyone is welcome to improve upon your original
+    design.
+
+    - Recipes to packages that have been deprecated by their development teams may be moved into a the ``deprecated`` directory at any time
+    without warning. Packages derived from deprecated recipes will remain available in AstroConda for historical purposes (i.e. to preserve
+    backwards compatibility).
