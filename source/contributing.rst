@@ -313,14 +313,3 @@ believe may still need to be done before a merge can be performed.
 
 After submitting your pull request, a member of the Science Software Branch at STScI, or fellow contributors will review the requested changes, comment, and if
 everything appears to be in order your recipe will be merged, built, and incorporated into AstroConda!
-
-Guidelines
-==========
-
-    - As a contributor you may not stake a claim to a particular recipe in the AstroConda repository. You are free to maintain a recipes
-    in AstroConda by issuing regular pull requests against them, however, please recognize that everyone is welcome to improve upon your original
-    design.
-
-    - Recipes to packages that have been deprecated by their development teams may be moved into a the ``deprecated`` directory at any time
-    without warning. Packages derived from deprecated recipes will remain available in AstroConda for historical purposes (i.e. to preserve
-    backwards compatibility).
