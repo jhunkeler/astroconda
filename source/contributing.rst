@@ -17,7 +17,7 @@ Guidelines
     - If your contribution is not accepted into AstroConda, as a general courtesy, you will be given a clear and concise reason.
     - As a contributor you may not claim exclusive rights to a particular recipe.
     - You are free to maintain a recipe in AstroConda by issuing regular pull requests.
-    - Everyone is welcome to improve upon recipes so long they do not introduce packaging conflicts.
+    - Everyone is welcome to improve upon recipes so long as the changes do not introduce packaging conflicts.
     - Abandoned recipes may be moved into the ``deprecated`` directory at any time without warning. (i.e. The package no longer compiles, has been obsoleted, or presents a conflict that cannot be resolved, etc).
     - Packages derived from ``deprecated`` recipes will remain available in AstroConda for historical purposes (i.e. to preserve backwards compatibility).
 
