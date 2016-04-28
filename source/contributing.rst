@@ -277,13 +277,13 @@ Python 3.5:
 
 .. code-block:: sh
 
-    conda-build -c http://ssb.stsci.edu/astroconda --skip-existing python=3.5 sympy
+    conda-build -c http://ssb.stsci.edu/astroconda --skip-existing --python=3.5 sympy
 
 That's probably a bit more involved than you thought. Let's break it down. We issue ``-c [URL]`` which instructs the build to utilize
 the AstroConda channel while checking for package dependencies (i.e. the recipe's ``requirements`` section). Secondly, we issue
 ``--skip-existing`` to prevent ``conda-build`` from rebuilding dependencies discovered in the local astroconda-contrib directory.
 That is to say, if a package defined as a requirement exists remotely, it will then download and install it, rather than rebuild it from scratch.
-``python=`` is self-explanatory, and the final argument is the name of the recipe(s) we intend to build.
+``--python=`` is self-explanatory, and the final argument is the name of the recipe(s) we intend to build.
 
 At this point, if the build was successful, our Conda package (a bzipped tarball) called ``sympy-1.0-py35_0.tar.bz2`` is emitted to ``/path/to/anaconda/conda-bld/[os-arch]/``.
 This directory is a local Conda package repository.
