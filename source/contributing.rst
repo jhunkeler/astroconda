@@ -155,7 +155,7 @@ Fill in the ``about`` section with relevant information regarding the package:
         license: GPL
         summary: Python library for symbolic mathematics
 
-Next, modfy the ``source`` section's ``url`` so that it points to ``sympy``'s source archive (on the internet):
+Next, modify the ``source`` section's ``url`` so that it points to ``sympy``'s source archive (on the internet):
 
 .. code-block:: sh
 
