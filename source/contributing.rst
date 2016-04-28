@@ -163,26 +163,31 @@ Next, modfy the ``source`` section's ``url`` so that it points to ``sympy``'s so
         fn: {{ name }}-{{ version }}.tar.gz
         url: https://github.com/{{ name }}/{{ name }}/releases/download/{{ name }}-{{ version }}/{{ name }}-{{ version }}.tar.gz
 
-What's with the never-ending stream of bracket encapsulated keywords, you ask? Conda uses JINJA2, a basic template system,
-to provide basic string interpolation within recipes. This comes in handy if, let's say, you decide to build a more recent version of ``sympy``,
+What's with the never-ending stream of bracket encapsulated keywords, you ask? Conda uses JINJA2, a basic template system that
+provides basic string interpolation within recipes. This comes in handy if, let's say, you decide to build a more recent version of ``sympy``,
 you need only modify the first two variable definitions in this file (assuming the URL structure has not changed).
 
 The ``requirements`` section may be confusing to some, so let's clarify the distinction between ``build`` and ``run`` before diving in.
 The ``build`` section defines Conda packages required at compile-time (i.e. ``python setup.py install``), whereas the ``run`` section
 lists Conda packages required at install-time (i.e. ``conda install [package]``).
 
-The processes of dependency discovery as a recipe maintainer is that of trial and error. For many Python packages obtained via
-PyPi, it is easy enough to visually examine ``setup.py`` or ``requirements.txt`` to get a good idea of the packages you need to
-incorporate into your recipe.
+As recipe maintainer the method used to dependency discover is that of trial and error. For many Python packages obtained via
+PyPi, it is easy enough to visually examine ``setup.py`` or ``requirements.txt`` to get a good idea of the recipes you need to
+depend on. Some package may require several iterations of executing ``conda-build`` and returning to your recipe in the editor
+to append more packages.
 
-As we can see below, ``sympy`` does not require dependencies beyond ``python`` itself. That's easy enough.
+As we can see below, ``sympy`` requires ``mpmath``, ``setuptools`` and ``python`` to *build* the recipe, but only
+``mpmath`` and ``python`` to *run it* successfully after installation:
 
 .. code-block:: yaml
 
     requirements:
         build:
+        - mpmath
+        - setuptools
         - python x.x
         run:
+        - mpmath
         - python x.x
 
 What does the ``x.x`` imply exactly? This instructs ``conda-build`` *not* to proceed unless ``python=[version]`` has
@@ -192,7 +197,7 @@ version requirements in Conda.
 
 The ``test`` section defines few useful lists, ``imports``, ``commands``, and ``requires``. While these are not *required* to be used in any given recipe,
 we do use them in AstroConda. The ``imports`` section is a list of Python module imports, the ``commands`` are executed in a
-basic shell environment, and finally ``requires`` defines any extraneous packages to be installed into the enviroment before running the tests.
+basic shell environment, and finally ``requires`` defines any extraneous packages to be installed into the environment before running the tests.
 
 .. code-block:: yaml
 
@@ -224,7 +229,7 @@ populated but disabled with a note describing why it doesn't work. Others will f
 optimal approach would be to contact the developers and plead with them to normalize the exit value.
 
 
-Below is our ``sympy`` final recipe. Despite the overwheming use of JINGA2 in our example, things are looking pretty streamlined.
+Below is our ``sympy`` final recipe. Despite the overwhelming use of JINGA2 in our example, things are looking pretty streamlined.
 
 .. code-block:: none
 
@@ -242,8 +247,11 @@ Below is our ``sympy`` final recipe. Despite the overwheming use of JINGA2 in ou
 
     requirements:
         build:
+        - mpmath
+        - setuptools
         - python x.x
         run:
+        - mpmath
         - python x.x
 
     test:
@@ -251,8 +259,13 @@ Below is our ``sympy`` final recipe. Despite the overwheming use of JINGA2 in ou
             - sympy
 
 
-Before we can issue a pull request on Github to incorporate our new ``sympy`` recipe into astroconda-contrib, we first ensure it builds, tests,
-and installs properly on our local system. To do this we need to change our directory to one level above the recipe.
+The ``template`` directory copied earlier in this tutorial contains two basic python build scripts for both *Nix (``build.sh``) and Windows (``bld.bat``),
+and is coincidentally compatible with the example we're using here. Not all Python packages (especially Makefile-based packages) will compile successfully
+using this "one-liner" template. Always refer to the ``INSTALL`` file or equivalent documentation for the program you are attempting to compile to learn
+more about what the package expects from the end-user at compile-time.
+
+Before we can issue a pull request on GitHub, we first ensure it builds, tests, and installs properly on our local system.
+To do this we need to change our directory to one level above the recipe.
 
 .. code-block:: sh
 
@@ -299,16 +312,20 @@ And checking it out for yourself:
 Now that you have verified the recipe is fully functional and are happy with the outcome, it's time to create a pull request
 against astroconda-contrib main repository.
 
-Push your ``sympy-contrib`` branch up to your fork on Github:
+Push your ``sympy-contrib`` branch up to your fork on GitHub:
 
 .. code-block:: sh
 
     git push origin sympy-contrib
 
-Now, using Github navigate to your ``astroconda-contrib`` fork, select the ``sympy-contrib`` branch from the drop-down menu (the default will read: "Branch: master", next to
-a black downward-pointing caret). Once selected, click the large green button labeled: "New pull request".
-From here, you may edit the title of the pull request and add any initial comments or notes regarding what you have done, or what you
-believe may still need to be done before a merge can be performed.
 
-After submitting your pull request, a member of the Science Software Branch at STScI, or fellow contributors will review the requested changes, comment, and if
-everything appears to be in order your recipe will be merged, built, and incorporated into AstroConda!
+It is recommended that you familiarize yourself with GitHub pull requests before proceeding (see: `tutorial <https://help.github.com/articles/using-pull-requests/>`_).
+
+Using GitHub, you will want to browse to your ``astroconda-contrib`` fork, select the ``sympy-contrib`` branch from the drop-down menu
+(the default will read: "Branch: master", next to a black downward-pointing caret). Once selected, click the large green button labeled: "New pull request".
+
+From here, you may wish to edit the title of your pull request and add initial comments or notes regarding what you have done, or
+list any work that may still need to be done. After submitting your pull request, a member of the Science Software Branch at STScI, or fellow contributors
+will review the requested changes, ask questions, offer feedback or advice.
+
+At this point if everything appears to be in order your recipe will likely be merged, built, and incorporated into AstroConda!
