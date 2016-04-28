@@ -285,7 +285,7 @@ the AstroConda channel while checking for package dependencies (i.e. the recipe'
 That is to say, if a package defined as a requirement exists remotely, it will then download and install it, rather than rebuild it from scratch.
 ``python=`` is self-explanatory, and the final argument is the name of the recipe(s) we intend to build.
 
-At this point, if the build was successful, our Conda package (a bzipped tarball) called ``sympy-1.0_py35.tar.bz2`` is emitted to ``/path/to/anaconda/conda-bld/[os-arch]/``.
+At this point, if the build was successful, our Conda package (a bzipped tarball) called ``sympy-1.0-py35_0.tar.bz2`` is emitted to ``/path/to/anaconda/conda-bld/[os-arch]/``.
 This directory is a local Conda package repository.
 
 To install this new ``sympy`` package and interact with it ourselves you could run the following:
