@@ -259,7 +259,7 @@ Below is our ``sympy`` final recipe. Despite the overwhelming use of JINGA2 in o
             - sympy
 
 
-The ``template`` directory copied earlier in this tutorial contains two basic python build scripts for both *Nix (``build.sh``) and Windows (``bld.bat``),
+The ``template`` directory copied earlier in this tutorial contains two basic python build scripts for both \*Nix (``build.sh``) and Windows (``bld.bat``),
 and is coincidentally compatible with the example we're using here. Not all Python packages (especially Makefile-based packages) will compile successfully
 using this "one-liner" template. Always refer to the ``INSTALL`` file or equivalent documentation for the program you are attempting to compile to learn
 more about what the package expects from the end-user at compile-time.
