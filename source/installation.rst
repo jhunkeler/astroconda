@@ -17,6 +17,12 @@ the installation medium appropriate for your operating system and architecture.
 
 Installation instructions for your platform are also available on the download page.
 
+.. tip::
+
+    Are you using ``bash`` as your shell? Run ``echo $SHELL`` in a terminal and make sure it says something like ``/bin/bash``.
+    If it does not, you will have to change your default shell (which is outside the scope of these instructions).
+    In the meantime, you can start ``bash -l`` from within your terminal to use ``bash`` temporarily to follow these instructions.
+
 
 Configure Conda
 ===============
