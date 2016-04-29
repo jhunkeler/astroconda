@@ -74,6 +74,8 @@ If you are already using AstroConda under a Python 2 environment, you may simply
 
 ``conda install -n astroconda iraf pyraf``
 
+.. _iraf_python3:
+
 Why is IRAF/PyRAF less functional under Python 3?
 =================================================
 
