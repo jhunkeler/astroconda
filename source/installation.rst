@@ -5,7 +5,7 @@ Installation
 Before you begin, note the following requirements and limitations of AstroConda:
 
     - AstroConda supports Linux (glibc ≥ 2.12) and Mac OS X (≥ 10.7; 10.6 is NOT supported)
-    - AstroConda packages support Python versions 2.7, 3.4, or 3.5.
+    - AstroConda packages support Python versions 2.7, 3.4, or 3.5 on 64-bit platforms. (If you don't know whether you have a 32-bit or 64-bit processor, assume you have 64-bit.)
     - If :abbr:`IRAF (Image Reduction and Analysis Facility)` is required as part of your personal workflow it is *highly recommended* you install Anaconda for Python 2.7 (see :ref:`iraf_python3`).
     - If you do not use :abbr:`IRAF (Image Reduction and Analysis Facility)`, choose the Anaconda installer with the Python version best suited for your scripting needs.
     - This documentation specifically targets Anaconda for Python 3 installations. However, the same commands should still work interchangeably between versions.
@@ -13,7 +13,7 @@ Before you begin, note the following requirements and limitations of AstroConda:
 Obtain Anaconda
 ===============
 
-Go grab a copy of the `Anaconda <https://www.continuum.io/downloads>`_ distribution from Continuum, Inc. Be sure to select the installation medium appropriate for your operating system (Linux or Mac) and architecture (most likely 64-bit).
+Go grab a copy of the `Anaconda <https://www.continuum.io/downloads>`_ distribution from Continuum, Inc. Be sure to select the installation medium appropriate for your operating system (Linux or Mac) and architecture (64-bit).
 
 Follow the installation instructions for your platform given on the download page. Before moving on to the next step, open a new terminal window, run the ``conda`` command, and ensure your terminal can find it.
 
