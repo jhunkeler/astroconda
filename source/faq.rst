@@ -66,9 +66,13 @@ Why isn't IRAF installed by default?
 
 IRAF is an extremely large software package. Not every developer or scientist requires it.
 
-If you wish to use IRAF, simply install it:
+If you wish to use IRAF, simply install it :
 
-``conda install -n iraf27 python=2.7 iraf && source activate iraf27``
+``conda create -n iraf27 python=2.7 iraf pyraf stsci && source activate iraf27``
+
+If you are already using AstroConda under a Python 2 environment, you may simply install IRAF/PyRAF into that environment:
+
+``conda install -n astroconda iraf pyraf``
 
 Why is IRAF/PyRAF less functional under Python 3?
 =================================================
@@ -77,7 +81,11 @@ The Python code in ``stsdas``, for example, is targeted specifically for Python 
 support under IRAF is great enough we may be able to pull our resources to accommodate the community. It is recommended to install
 IRAF into its own environment under Python 2.7:
 
-``conda create -n iraf27 python=2.7 iraf && source activate iraf27``
+``conda create -n iraf27 python=2.7 iraf pyraf stsci && source activate iraf27``
+
+
+========================================
+
 
 
 Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
