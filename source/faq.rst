@@ -84,10 +84,6 @@ IRAF into its own environment under Python 2.7:
 ``conda create -n iraf27 python=2.7 iraf pyraf stsci && source activate iraf27``
 
 
-========================================
-
-
-
 Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
 =============================================================================
 
