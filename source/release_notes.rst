@@ -66,7 +66,9 @@ Allow flux extraction from 0 to 100%
 The latest version of calcos (3.0) throws an IndexError when the range
 of the 2zxtab is 0 to 100%. Handle this case separately, always
 integrating over the whole height of the extraction box to duplicate the
-behavior of the boxcar option.
+behavior of the boxcar
+
+option.
 
 Ignore DQ flag DQ\_GAIN\_SAG\_HOLE in background regions in profile alignment step
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
