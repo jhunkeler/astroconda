@@ -13,7 +13,7 @@ Before you begin, note the following requirements and limitations of AstroConda:
 Obtain Anaconda
 ===============
 
-Go grab a copy of the `Anaconda <https://www.continuum.io/downloads>`_ distribution from Continuum, Inc. Be sure to select the installation medium appropriate for your operating system (Linux or Mac) and architecture (64-bit).
+Go grab a copy of the `Anaconda <https://www.continuum.io/downloads>`_ distribution from Continuum Analytics, Inc. Be sure to select the installation medium appropriate for your operating system (Linux or Mac) and architecture (64-bit).
 
 Follow the installation instructions for your platform given on the download page. Before moving on to the next step, open a new terminal window, run the ``conda`` command, and ensure your terminal can find it.
 
@@ -111,7 +111,7 @@ Installing other packages
 
 AstroConda provides a suite of packages that are known to work well together and are supported by engineers from STScI. However, being built on top of the widely-used ``conda`` tools for managing Python environments, AstroConda also supports the installation of additional 3rd-party packages.
 
-Full documentation of the ``conda`` tool is available from Continuum Analytics, its creators and maintainers: http://conda.pydata.org/docs/using/index.html. However, we have provided a brief explanation of 3rd-party package installation below for quick reference.
+Full documentation of the ``conda`` tool is available from Continuum Analytics, Inc., its creators and maintainers: http://conda.pydata.org/docs/using/index.html. However, we have provided a brief explanation of 3rd-party package installation below for quick reference.
 
 For scientific packages available through Anaconda, installation is as simple as::
 
@@ -124,3 +124,4 @@ The Python-standard tool ``pip`` is also available to install packages distribut
 
     $ source activate astroconda
     $ pip install nameofpkg
+

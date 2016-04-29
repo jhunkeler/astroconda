@@ -46,12 +46,12 @@ Gemini Observatory
 - http://www.gemini.edu/node/10795
 
 
-Anaconda (Continuum, Inc.)
+Anaconda (Continuum Analytics, Inc.)
 ==========================
 
 .. important::
 
-    AstroConda is not affiliated with Continuum, Inc. or its partners.
+    AstroConda is not affiliated with Continuum Analytics, Inc. or its partners.
 
 **Anaconda**
 
