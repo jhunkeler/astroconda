@@ -2,6 +2,7 @@
 F.A.Q.
 ######
 
+
 After "``conda create ...``" why does "``source activate astroconda``" fail?
 ============================================================================
 
@@ -20,6 +21,36 @@ environment. The Anaconda 'root' environment **does not** use this feature, and 
 To clarify, it is impossible to execute ``source activate root``. Installing AstroConda packages directly into the 'root' may cause
 Anaconda itself to be come unstable. In addition to this, removing packages from this environment is tedious and will likely break
 your Anaconda installation if you are not careful. *Reinstalling from scratch is the safest option.*
+
+Why am I being prompted by NumPy/SciPy with a MKL 30-day trial warning?
+=======================================================================
+
+The ``root`` environment of your Anaconda installation is severely outdated (``<=2.4.0``) and suffers from a crippling bug
+introduced by the ``conda-3.19.x`` package.
+
+It is possible to verify the version of Anaconda you have by running:
+
+.. code-block:: sh
+
+    $ conda info anaconda
+
+The only solution is to update your Anaconda installation to the latest release:
+
+.. code-block:: sh
+
+    $ source deactivate
+    $ conda update conda
+    $ conda update anaconda
+
+Next, update the ``astroconda`` environment to realign your packages with the ``root`` environment:
+
+.. code-block:: sh
+
+    $ conda update -n astroconda --all
+    $ source activate astroconda
+
+After doing this, the ``mkl`` 30-day trial warning will not be displayed while importing ``numpy``, ``scipy``, or any
+other package requiring ``mkl``.
 
 How does AstroConda differ from Ureka?
 ======================================
