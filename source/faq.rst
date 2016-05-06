@@ -85,6 +85,33 @@ IRAF into its own environment under Python 2.7:
 
 ``conda create -n iraf27 python=2.7 iraf pyraf stsci && source activate iraf27``
 
+Why is IRAF 32-bit instead of 64-bit?
+=====================================
+
+Many of the IRAF tasks that we include with AstroConda are so old that they cannot be compiled as 64-bit executables
+without significant changes to the source code. Because of this restriction, we always build IRAF as a 32-bit program, even
+for our 64-bit distributions.
+
+In Linux, how do I install IRAF's 32-bit dependencies?
+------------------------------------------------------
+
+Debian >=7, Ubuntu >=14.04
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    # If on Debian execute this first (not required on Ubuntu):
+    sudo dpkg --add-architecture i386
+
+    sudo apt-get update
+    sudo apt-get install libc6:i386 libz1:i386 libncurses5:i386 libbz2-1.0:i386 libuuid1:i386 libxcb1:i386
+
+RHEL/CentOS >=6, Fedora >=14
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: sh
+
+    sudo yum install glibc.i686 zlib.i686 ncurses.i686 bzip2-libs.i686 uuid.i686 libxcb.i686
 
 Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
 =============================================================================
@@ -92,6 +119,4 @@ Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
 **Probably**, however unlike Ureka, we do not impose any restrictions on your environment or issue compatibility warnings at run-time.
 It is your responsibility to maintain a functional shell environment so [insert scientific distribution here] does not conflict with your Anaconda
 installation.
-
-
 
