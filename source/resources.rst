@@ -47,7 +47,7 @@ Gemini Observatory
 
 
 Anaconda (Continuum Analytics, Inc.)
-==========================
+====================================
 
 .. important::
 
