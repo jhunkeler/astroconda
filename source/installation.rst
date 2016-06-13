@@ -69,7 +69,12 @@ This will prompt you to confirm the installation of all the STScI packages avail
 Installation with legacy IRAF support
 -------------------------------------
 
-The developers of AstroConda have limited resources to support :abbr:`IRAF (Image Reduction and Analysis Facility)`, but users that require the ability to run IRAF and PyRAF tasks may want to install it through AstroConda.
+The developers of AstroConda have limited resources to
+support :abbr:`IRAF (Image Reduction and Analysis Facility)`, but users that
+require the ability to run IRAF and PyRAF tasks may want to install it
+through AstroConda.  For help with many issues that come up during installation
+or use, visit the `PyRAF FAQ <http://www.stsci.edu/institute/software_hardware/pyraf/pyraf_faq>`_
+page.
 
 IRAF is not installed by default, so the AstroConda install command is a little different.
 
@@ -85,7 +90,11 @@ Then, just as with the default installation, it is necessary to activate the env
 
 .. note::
 
-    Support for using Python 2.7 and IRAF is being gradually phased out by STScI maintainers. In the transitional period, you may wish to install AstroConda with the default settings but maintain a Python 2.7 + IRAF environment for testing. The following commands create an ``astroconda`` environment with the default settings, and an ``iraf27`` environment with IRAF.
+    Support for using Python 2.7 and IRAF is being gradually phased out by STScI
+    maintainers. In the transitional period, you may wish to install AstroConda
+    with the default settings but maintain a Python 2.7 + IRAF environment for
+    testing. The following commands create an ``astroconda`` environment with
+    the default settings, and an ``iraf27`` environment with IRAF.
 
     .. code-block:: sh
 
@@ -124,4 +133,3 @@ The Python-standard tool ``pip`` is also available to install packages distribut
 
     $ source activate astroconda
     $ pip install nameofpkg
-

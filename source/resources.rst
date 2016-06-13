@@ -37,6 +37,9 @@ Space Telescope Science Institute
 
 - `help@stsci.edu <mailto:help@stsci.edu>`_
 
+**PyRAF FAQ**
+
+- http://www.stsci.edu/institute/software_hardware/pyraf/pyraf_faq
 
 Gemini Observatory
 ==================
