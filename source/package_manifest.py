@@ -4,9 +4,9 @@ from urllib.request import urlopen
 from pprint import pprint
 
 ARCHITECTURE = [ 'linux-64', 'osx-64']
-METAPACKAGES = [('stsci', '1.0.0'),
+METAPACKAGES = [('stsci', '1.0.1'),
                 ('stsci-data-analysis', '1.0.0'),
-                ('stsci-hst', '1.0.0'),
+                ('stsci-hst', '1.0.4'),
                 ('stsci-jwst', '1.0.0')]
 REPODATA_URL='http://ssb.stsci.edu/astroconda/{arch}/repodata.json'
 #REPODATA_URL='http://ssb.stsci.edu/conda-dev/{arch}/repodata.json'

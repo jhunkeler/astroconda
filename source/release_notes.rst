@@ -4,6 +4,35 @@ Release Notes
 ACSTOOLS
 --------
 
+ACSTOOLS v2.0.4 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-07-28 18:50:50+00:00*
+
+``stsci.xxx``, ``scipy``, and ``scikit-image`` are now *optional*
+packages. That is, ``acstools`` would install without them but affected
+task(s) will complain if they are missing.
+
+ACSTOOLS v2.0.3 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-07-28 17:27:15+00:00*
+
+Re-organize package for a cleaner look. Executable scripts are now entry
+points (for Windows compatibility). Version tagging is now controlled by
+``relic`` submodule. Miscellaneous clean ups that should not affect
+functionality.
+
+ACSTOOLS v2.0.2 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-06-03 20:42:49+00:00*
+
+Bug fix release with a fix for outdated skimage import in satellite
+detection tool.
+
+References: #6
+
 ACSTOOLS v2.0.1 Release Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -214,6 +243,22 @@ Added code to pass brftab reference file to timetag.getWavecalOffsets so
 that the Active Area can be determined at the time the offsets are
 calculated.
 
+CRDS
+----
+
+Server-side code for opus-2016.1-4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*None*
+
+This release includes context pickling optimizations to address Isilon
+file system performance issues.
+
+CUBE-TOOLS
+----------
+
+*2016-08-03 15:22:50+00:00*
+
 DRIZZLEPAC
 ----------
 
@@ -329,6 +374,16 @@ Feb 2016. It primarily includes bug fixes; namely,
 HSTCAL
 ------
 
+HSTCAL v1.0.1 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-07-07 19:36:46+00:00*
+
+This release is to accommodate CALACS processing for new ACS subarrays
+added by FSW change done in May 2016. Particularly, BLEVCORR is modified
+to trim virtual overscans off the new subarrays (old subarrays do not
+have virtual overscans). No changes are made for CALWF3 and CALSTIS.
+
 HSTCAL v1.0.0 Release Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -426,8 +481,48 @@ ACS
 
 -  Fixed memory leaks (non-critical).
 
+JWST\_VISIBILITY
+----------------
+
+*2016-08-01 19:12:06+00:00*
+
+The first tagged release of the tool for internal and external testing.
+Target visibility plots from this tool should **always** be checked
+against APT for consistency, as this tool does not account for all of
+the same constraints (and is not intended to).
+
+PYRAF
+-----
+
+Version 2.1.10.1
+~~~~~~~~~~~~~~~~
+
+*2016-06-23 15:32:40+00:00*
+
+This is not a real release of PyRAF per-se, but it's first git/github
+tag.
+
 PYSYNPHOT
 ---------
+
+PySynphot v0.9.8.4 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-08-15 15:50:59+00:00*
+
+Fixed a bug of inconsistent ``waveset`` definitions across different
+objects. Cleaned up setup files. Now uses ``relic`` submodule for
+version tagging.
+
+PySynphot v0.9.8.3 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-07-07 21:09:08+00:00*
+
+Moved ``data``, ``test``, and ``src`` directories one-level down for
+AstroConda. Minor documentation related updates. Typical users should
+not see significant changes between this release and the previous
+release of 0.9.8.2.
 
 PySynphot v0.9.8.2 Release Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -450,6 +545,23 @@ October 19, 2015:
 
 REFTOOLS
 --------
+
+REFTOOLS v1.7.3 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-08-08 18:17:10+00:00*
+
+Fix AstroConda build by making TEAL import in ``tdspysyn`` completely
+optional.
+
+REFTOOLS v1.7.2 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-08-02 15:30:44+00:00*
+
+Reorganized and cleaned up package. Updated documentation. Marked some
+tests as expected failures. Overall, none of these changes should affect
+end-user.
 
 REFTOOLS v1.7.1 Release Notes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -478,6 +590,48 @@ Pre-release for May2015 JWST DA User Training
 SPECVIZ
 -------
 
+v0.2.1rc5
+~~~~~~~~~
+
+*2016-07-19 13:20:03+00:00*
+
+Same as RC4, except we fixed ``ConfigParser`` compability with Python 3.
+
+v0.2.1rc4
+~~~~~~~~~
+
+*2016-07-12 18:05:38+00:00*
+
+This release incorporates the specutils package, replacing the
+previously used base spectrum object with the specutils object.
+
+v0.2.0rc3
+~~~~~~~~~
+
+*2016-06-20 23:44:13+00:00*
+
+This release contains fixes and usability improvements from our first
+round of internal testing. Its main priorities include:
+
+1. Remove dependency on Qt Creator
+
+2. Reincorporate all our tools as plugins
+
+It introduces a new plugin architecture for user-created extensions.
+
+v0.1.2rc3
+~~~~~~~~~
+
+*2016-05-18 16:19:40+00:00*
+
+Minor improvements to:
+
+-  unit behaviors
+
+-  modelling behaviors
+
+-  updated installation documentation
+
 v0.1.1rc3
 ~~~~~~~~~
 
@@ -485,16 +639,16 @@ v0.1.1rc3
 
 Minor bug fixes.
 
-v0.1rc3
-~~~~~~~
+v0.1.0rc3
+~~~~~~~~~
 
 *2016-03-17 19:14:04+00:00*
 
 Feature complete (for this release) version of SpecViz. However,
 usability bugs and minor tweaks are still to be expected.
 
-v0.1rc2
-~~~~~~~
+v0.1.0rc2
+~~~~~~~~~
 
 *2016-02-15 17:55:20+00:00*
 
@@ -505,6 +659,32 @@ v0.1rc2
 -  ASCII table ingestion implemented
 
 -  Bug fixes
+
+STGINGA
+-------
+
+stginga 0.1.2 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-07-12 20:30:51+00:00*
+
+Added background mean calculation to ``SNRCalc`` local plugin. Removed
+``unicode_literals`` from imports.
+
+stginga 0.1.1 Release Notes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*2016-07-07 18:40:22+00:00*
+
+This is a bug fix release that fixed ConfigParser error in Python 3.
+Also updated astropy\_helpers to v1.2.
+
+First stginga release
+~~~~~~~~~~~~~~~~~~~~~
+
+*2016-06-21 21:23:26+00:00*
+
+Mostly working. Why not?
 
 STSCI.TOOLS
 -----------
