@@ -15,6 +15,7 @@ To receive AstroConda announcements, or to engage in general discussion, feel fr
 
    installation
    updating
+   releases
    faq
    contributing
    package_manifest
