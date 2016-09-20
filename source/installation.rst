@@ -17,7 +17,7 @@ Obtain Anaconda
 
     Installing Anaconda3 will not prevent you from using Python 2.
 
-    ``conda`` allows you to to deploy multiple independent Python environments, at-will, under a single Anaconda installation. You may have trouble following along with this guide if you choose to install Anaconda2.
+    ``conda`` allows you to deploy multiple independent Python environments, at-will, under a single Anaconda installation. You may have trouble following along with this guide if you choose to install Anaconda2.
 
 
 Go grab a copy of `Anaconda3 <https://www.continuum.io/downloads>`_ from Continuum Analytics, Inc. Be sure to select the installation medium appropriate for your operating system (Linux or OS X) and architecture (64-bit). The OS X GUI installer may cause side-effects, such as changing permissions of files in your home directory to ``root:wheel``, or mistakenly creating a system-wide installation under ``/anaconda`` instead of your personal home directory. To avoid this situation perform a command-line installation instead.
