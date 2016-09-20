@@ -56,7 +56,7 @@ OS X      3.5     http://ssb.stsci.edu/conda/hstdp-2016.1/hstdp-2016.1-osx-py35.
 Release Schema
 ==============
 
-If you wish to write shell scripts to manage your local pipeline installations, this may of interest to you:
+If you wish to write shell scripts to manage your local pipeline installations, this may be of interest to you:
 
 .. code-block:: sh
 
