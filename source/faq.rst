@@ -123,7 +123,7 @@ RHEL/CentOS >=6, Fedora >=14
 
 .. code-block:: sh
 
-    sudo yum install glibc.i686 zlib.i686 ncurses.i686 bzip2-libs.i686 uuid.i686 libxcb.i686
+    sudo yum install glibc.i686 zlib.i686 ncurses-libs.i686 bzip2-libs.i686 uuid.i686 libxcb.i686
 
 Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
 =============================================================================
