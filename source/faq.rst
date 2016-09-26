@@ -46,8 +46,7 @@ Next, update the ``astroconda`` environment to realign your packages with the ``
     $ conda update -n astroconda --all
     $ source activate astroconda
 
-After doing this, the ``mkl`` 30-day trial warning will not be displayed while importing ``numpy``, ``scipy``, or any
- other package requiring ``mkl``.
+After doing this, the ``mkl`` 30-day trial warning will not be displayed while importing ``numpy``, ``scipy``, or any other package requiring ``mkl``.
 
 How does AstroConda differ from Ureka?
 ======================================
