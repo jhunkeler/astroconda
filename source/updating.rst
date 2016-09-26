@@ -76,7 +76,7 @@ Let's take the previous example one step further... Imagine ``stsci.tools`` is b
 
 .. code-block:: sh
 
-    $ echo "stsci.tools <=3.4.0" > ${CONDA_ENV_PATH}/conda-meta/pinned
+    $ echo "stsci.tools <=3.4.0" > ${CONDA_PREFIX}/conda-meta/pinned
 
 From now on, future calls to ``conda update`` will omit ``stsci.tools`` while performing dependency resolution. However, a clear side-effect of this will also be losing the ability to update packages that depend strictly on version ``3.4.2``. Although this is not a permanent solution it can prove useful in a bad situation.
 
