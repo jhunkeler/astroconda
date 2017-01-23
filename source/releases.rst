@@ -3,14 +3,17 @@ Pipeline Releases
 
 .. note::
 
-    - Python 2.x.x is not supported.
+    - Python 2.x.x is not supported (unless noted otherwise).
     - 32-bit operating systems are not supported.
 
+Pipeline releases differ from the standard AstroConda distribution and serve a different purpose. The release files described below are immutable snapshots of STScI operational software, and can be used to replicate the environment used by STScI to perform mission-specific data processing. Be aware that upgrading packages with ``conda update [pkg]`` is not recommended as it will likely introduce unwanted bugs and/or break the environment all together.
+
+If you have any questions, comments, or concerns related to pipeline releases please feel free to contact help@stsci.edu
 
 Installation
 ============
 
-To install a STScI pipeline release, use the following format:
+Pipeline release installations use the following ``conda create`` command format:
 
 .. code-block:: sh
 
