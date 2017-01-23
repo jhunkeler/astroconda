@@ -39,7 +39,7 @@ Install AstroConda
 
 .. caution::
 
-    If you wish to install a mission-specific data processing environment, please `click here <releases.html>`_.
+    If you wish to install a copy of a mission-specific operational data processing environment, please `click here <releases.html>`_.
 
 
 Standard Installation (without IRAF)
