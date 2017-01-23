@@ -1,6 +1,6 @@
-*****************************
-Keeping AstroConda "Like New"
-*****************************
+********
+Updating
+********
 
 Anaconda's package manager, Conda, will not automatically update unless a newer version of a package is detected during a routine package installation. Suffice to say, unless you keep your packages up to date with ``conda update``, the packages installed in your Anaconda distribution will remain relatively static.
 
