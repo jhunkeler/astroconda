@@ -4,31 +4,29 @@ Installation
 
 Before you begin, the list below contains known requirements and limitations of AstroConda:
 
-    - This documentation targets Anaconda3 (i.e. Python 3), but the installation instructions work equally well with any of the Anaconda distributions.
+    - This documentation targets Miniconda3 (i.e. Python 3), but the installation instructions work equally well with any of the Miniconda distributions.
     - AstroConda supports Linux (glibc ≥ 2.12) and Mac OS X (≥ 10.7; 10.6 is NOT supported)
     - AstroConda contains packages for 64-bit [#archnote]_ Python 2.7 and 3.5.
     - Conda only supports BASH and ZSH environments. If you are a native CSH user, execute ``bash -l`` prior to performing the procedures detailed in this guide.
-    - IRAF users: After configuring Anaconda for use with AstroConda, refer to the :ref:`iraf_install` section of this guide to continue your installation.
+    - IRAF users: After configuring Miniconda for use with AstroConda, refer to the :ref:`iraf_install` section of this guide to continue your installation.
 
-Obtain Anaconda
-===============
+Obtain Miniconda
+================
 
 .. note::
 
-    Installing Anaconda3 will not prevent you from using Python 2.
+    Installing Miniconda3 will not prevent you from using Python 2.
 
-    ``conda`` allows you to deploy multiple independent Python environments, at-will, under a single Anaconda installation. You may have trouble following along with this guide if you choose to install Anaconda2.
+    ``conda`` allows you to deploy multiple independent Python environments, at-will, under a single Miniconda installation. You may have trouble following along with this guide if you choose to install Miniconda2.
 
 
-Go grab a copy of `Anaconda3 <https://www.continuum.io/downloads>`_ from Continuum Analytics, Inc. Be sure to select the installation medium appropriate for your operating system (Linux or OS X) and architecture (64-bit). The OS X GUI installer may cause side-effects, such as changing permissions of files in your home directory to ``root:wheel``, or mistakenly creating a system-wide installation under ``/anaconda`` instead of your personal home directory. To avoid this situation perform a command-line installation instead.
-
-Follow the installation instructions for your platform provided on the download page. Before moving on to the next step, open a new terminal window, and run ``conda`` to verify your terminal session can find it.
+Go grab a copy of `Miniconda3 <http://conda.pydata.org/miniconda.html>`_ from Continuum Analytics, Inc. Be sure to select the installation medium appropriate for your operating system (Linux or OS X) and architecture (64-bit). Follow the installation instructions for your platform provided on the download page. Before moving on to the next step, open a new terminal window, and run ``conda`` to verify your terminal session can find it.
 
 
 Configure Conda
 ===============
 
-In order to install packages directly from the AstroConda repository, you will need to configure Anaconda to do so. This will permanently add the repository to Conda's search path. Be aware that adding additional `anaconda.org <https://anaconda.org>`_ or direct-url repositories may affect the stability of AstroConda's run-time environment.
+In order to install packages directly from the AstroConda repository, you will need to configure Miniconda to do so. This will permanently add the repository to Conda's search path. Be aware that adding additional `anaconda.org <https://anaconda.org>`_ or direct-url repositories may affect the stability of AstroConda's run-time environment.
 
 .. code-block:: sh
 
@@ -38,6 +36,11 @@ In order to install packages directly from the AstroConda repository, you will n
 
 Install AstroConda
 ==================
+
+.. caution::
+
+    If you wish to install a mission-specific data processing environment, please `click here <releases.html>`_.
+
 
 Standard Installation (without IRAF)
 ------------------------------------
@@ -91,6 +94,7 @@ Then, just as with the default installation, it is necessary to activate the env
 
     $ source activate iraf27
 
+
 Fine-tuning the Installation
 ============================
 
@@ -108,14 +112,14 @@ AstroConda provides a suite of packages that are known to work well together and
 
 Full documentation of the ``conda`` tool is available from Continuum Analytics, Inc., its creators and maintainers: http://conda.pydata.org/docs/using/index.html. However, we have provided a brief explanation of 3rd-party package installation below for quick reference.
 
-For scientific packages available through Anaconda, installation is as simple as:
+For scientific packages available through Miniconda, installation is as simple as:
 
 .. code-block:: sh
 
     $ source activate astroconda
     $ conda install name_of_pkg
 
-Often, the easiest way to see if the package is available through Anaconda is to try installing it. The full list of available packages is here: http://repo.continuum.io/pkgs/.
+Often, the easiest way to see if the package is available through Miniconda is to try installing it. The full list of available packages is here: http://repo.continuum.io/pkgs/.
 
 The Python-standard tool ``pip`` is also available to install packages distributed through the Python Package Index (PyPI):
 
