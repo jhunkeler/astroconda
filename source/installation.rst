@@ -26,12 +26,16 @@ Go grab a copy of `Miniconda3 <http://conda.pydata.org/miniconda.html>`_ from Co
 Configure Conda
 ===============
 
-In order to install packages directly from the AstroConda repository, you will need to configure Miniconda to do so. This will permanently add the repository to Conda's search path. Be aware that adding additional `anaconda.org <https://anaconda.org>`_ or direct-url repositories may affect the stability of AstroConda's run-time environment.
+In order to install packages directly from the AstroConda repository, you will need to configure Conda to do so.
 
 .. code-block:: sh
 
     $ conda config --add channels http://ssb.stsci.edu/astroconda
     # Writes changes to ~/.condarc
+
+This command will append the AstroConda channel URL to Conda's channel search path. Be aware that adding additional `anaconda.org <https://anaconda.org>`_ or direct-url repositories can potentially effect thestability of AstroConda's run-time environment.
+
+For example, if you add a channel found on anaconda.org because it contains a software package you're interested in, but also provides the same software as AstroConda, it's possible you may lose track of where packages are coming from. If you decide to have multiple channels defined in your configuration and bugs begin to appear, it may be best to check their origin before issuing a support ticket to help@stsci.edu. ``conda list`` can be used to display such information about the packages installed in your environment.
 
 
 Install AstroConda
