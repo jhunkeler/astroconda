@@ -48,24 +48,23 @@ We recommend against using the astroconda.org mirror on a regular basis. The ban
 After "conda create -n ..." why does "source activate astroconda" fail?
 ============================================================================
 
-Anaconda does not support CSH (C-Shell). Please switch to a POSIX-compatible shell (e.g. BASH, KSH, ZSH).
+Conda does not support CSH (C-Shell). Please switch to a POSIX-compatible shell (e.g. BASH, KSH, ZSH).
 
 .. note::
 
-    STScI will not maintain a separate codebase of Anaconda's backend ``conda`` in order to implement CSH support. Feel free to create an issue with the `developers <http://github.com/conda/conda/issues>`_.
+    STScI will not maintain a separate codebase of ``conda`` in order to implement CSH support. Feel free to create an issue with the `developers <http://github.com/conda/conda/issues>`_.
 
-I installed AstroConda into my Anaconda 'root' environment. What now?
-=====================================================================
+I installed AstroConda into my [Mini/Ana]conda 'root' environment. What now?
+============================================================================
 
-Please reinstall Anaconda from scratch. AstroConda uses ``source activate`` and ``source deactivate`` calls to
-control your shell environment. The Anaconda 'root' environment **does not** use this feature, and thus, the packages you have installed there will not work properly.
+Please reinstall Miniconda (or Anaconda) from scratch. AstroConda uses ``source activate`` and ``source deactivate`` calls to control your shell environment. The Anaconda 'root' environment **does not** use this feature, and thus, the packages you have installed there will not work properly.
 
-To clarify, it is impossible to execute ``source activate root``. Installing AstroConda packages directly into the 'root' may cause Anaconda itself to be come unstable. In addition to this, removing packages from this environment is tedious and will likely break your Anaconda installation if you are not careful. *Reinstalling from scratch is the safest option.*
+To clarify, installing AstroConda packages directly into the 'root' may cause Miniconda (or Anaconda) itself to be come unstable. In addition to this, removing packages from this environment is tedious and will likely break your Anaconda installation if you are not careful. *Reinstalling from scratch is the safest option.*
 
 Why am I being prompted by NumPy/SciPy with a MKL 30-day trial warning?
 =======================================================================
 
-The ``root`` environment of your Anaconda installation is severely outdated (``<=2.4.0``) and suffers from a crippling bug introduced by the ``conda-3.19.x`` package.
+The ``root`` environment of your installation is severely outdated (``<=2.4.0``) and suffers from a crippling bug introduced by the ``conda-3.19.x`` package.
 
 It is possible to verify the version of Anaconda you have by running:
 
@@ -167,7 +166,7 @@ RHEL/CentOS >=6, Fedora >=14
 Will AstroConda interfere with other scientific distributions (e.g. SciSoft)?
 =============================================================================
 
-**Probably**, however unlike Ureka, we do not impose any restrictions on your environment or issue compatibility warnings at run-time. It is your responsibility to maintain a functional shell environment so [insert scientific distribution here] does not conflict with your Anaconda installation.
+**Probably**, however unlike Ureka, we do not impose any restrictions on your environment or issue compatibility warnings at run-time. It is your responsibility to maintain a functional shell environment so [insert scientific distribution here] does not conflict with your Conda installation.
 
 Ds9 - Cannot select regions
 ===========================
