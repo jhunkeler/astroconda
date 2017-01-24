@@ -9,8 +9,8 @@ Updating AstroConda
 
 There are few simple ways to update packages obtained from AstroConda:
 
-Updating the Release
---------------------
+Updating
+--------
 
 .. code-block:: sh
 
@@ -41,6 +41,18 @@ Updating Packages Individually
 
 If you are interested in receiving updates for a particular package, then this method is for you. Be aware that packages may depend on other packages, so the total list of package updates returned by this command will vary.
 
+
+General Maintenance
+===================
+
+.. code-block:: sh
+
+    $ source deactivate
+    $ conda update --all
+
+Keeping AstroConda up to date is important, but not nearly as important as keeping your 'root' (i.e. the base installation) updated as well. ``conda`` is like any other software project and it requires periodic refreshing to stay current with the latest changes. Failing to do this can (over time) cause side-effects such as, the inability to upgrade, install, remove, or search for packages.
+
+However, updating extremely old releases of ``conda`` to the latest version have been known to break Miniconda due to a variety of API changes in the code. If this happens to you, reinstalling Miniconda and regenerating your AstroConda environment is the fastest way to resolve the problem. Refer to the `FAQ <faq.html#how-do-i-reinstall-miniconda>`_ for more details.
 
 Downgrading Packages
 ====================
