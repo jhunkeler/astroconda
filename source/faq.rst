@@ -61,6 +61,27 @@ Please reinstall Miniconda (or Anaconda) from scratch. AstroConda uses ``source 
 
 To clarify, installing AstroConda packages directly into the 'root' may cause Miniconda (or Anaconda) itself to be come unstable. In addition to this, removing packages from this environment is tedious and will likely break your Anaconda installation if you are not careful. *Reinstalling from scratch is the safest option.*
 
+How do I reinstall Miniconda?
+=============================
+
+This assumes Miniconda3 has been installed to the default location (``/home/username/miniconda3``). We will refer to your home directory as ``~/`` from here on.
+
+.. code-block:: sh
+
+    # Make a backup of your existing installation if desired:
+    $ tar cfz /safe/place/miniconda3_OLD.tar.gz ~/miniconda3
+
+    # Remove miniconda3
+    $ rm -rf ~/miniconda3
+
+    # Download the Miniconda3 installer for your platform from: http://conda.pydata.org/miniconda.html
+
+    # Execute the installer (where PLATFORM is one of Linux or MacOSX)
+    $ bash /path/to/Miniconda3-latest-PLATFORM-x86_64.sh
+
+The installer may offer to automatically edit ``~/.bash_profile`` and prepend ``~/miniconda3/bin`` to your ``PATH``. If you already have this entry in your ``PATH``, simply reponse with 'no'. Responding with 'yes' will add another entry even if it exists resuling in a ``PATH`` that looks much like: ``~/miniconda3/bin:~/miniconda3/bin:[...]``.
+
+
 Why am I being prompted by NumPy/SciPy with a MKL 30-day trial warning?
 =======================================================================
 
