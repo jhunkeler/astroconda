@@ -41,10 +41,9 @@ For example, if you add a channel found on anaconda.org because it contains a so
 Install AstroConda
 ==================
 
-.. caution::
+.. attention::
 
-    If you wish to install a copy of a mission-specific operational data processing environment, please `click here <releases.html>`_.
-
+    If you are on an instrument team or need to calibrate data using the same environment as STScI operations, please `click here <releases.html>`_.
 
 Standard Installation (without IRAF)
 ------------------------------------
