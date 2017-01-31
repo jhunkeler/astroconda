@@ -2,6 +2,32 @@
 F.A.Q.
 ######
 
+What is the difference between Conda, Miniconda, Anaconda, and AstroConda?
+==========================================================================
+
+- **Conda** is a userland environment and package management utility maintained by Continuum Analytics, Inc.
+
+- **Miniconda** is distributed by Continuum Analytics, Inc. as a standalone installer, and provides a minimal conda-based environment (i.e. ``conda`` and ``python``)
+
+- **Anaconda** is distributed by Continuum Analytics, Inc. as a standalone installer, and provides a fully featured conda-based environment (i.e. ``conda``, ``python``, and commonly used utilities, libraries, and Python packages).
+
+- **AstroConda** is a collection of Conda packages, also known as a "Conda Channel", to be used with existing Miniconda and Anaconda installations via ``conda create``, ``conda install``, and ``conda update``. Package recipes are freely available on `GitHub <https://github.com/astroconda/astroconda-contrib>`_ and are maintained by the `Science Software Branch (SSB) <http://ssb.stsci.edu>`_ of the `Space Telescope Science Institute (STScI) <http://www.stsci.edu>`_.
+
+Why do you recommend installing Miniconda instead of Anaconda?
+==============================================================
+
+Miniconda (~100MBs) has a significantly smaller footprint than Anaconda (~1GBs). However, you are free to continue using Anaconda as your base installation if it suits your personal needs.
+
+If I already have Miniconda or Anaconda installed, do I need to reinstall it to use AstroConda?
+===============================================================================================
+
+No. Adding our channel URL to your current configuration with ``conda config --add`` should suffice.
+
+Does AstroConda provide an installation script similar to Miniconda or Anaconda?
+================================================================================
+
+No. AstroConda requires Miniconda or Anaconda to be installed prior to installing packages from the AstroConda channel.
+
 Could not find URL: http://ssb.stsci.edu/astroconda/...
 =======================================================
 
@@ -54,8 +80,8 @@ Conda does not support CSH (C-Shell). Please switch to a POSIX-compatible shell 
 
     STScI will not maintain a separate codebase of ``conda`` in order to implement CSH support. Feel free to create an issue with the `developers <http://github.com/conda/conda/issues>`_.
 
-I installed AstroConda into my [Mini/Ana]conda 'root' environment. What now?
-============================================================================
+I installed AstroConda packages into my [Mini/Ana]conda 'root' environment. What now?
+=====================================================================================
 
 Please reinstall Miniconda (or Anaconda) from scratch. AstroConda uses ``source activate`` and ``source deactivate`` calls to control your shell environment. The Anaconda 'root' environment **does not** use this feature, and thus, the packages you have installed there will not work properly.
 
@@ -81,6 +107,26 @@ This assumes Miniconda3 has been installed to the default location (``/home/user
 
 The installer may offer to automatically edit ``~/.bash_profile`` and prepend ``~/miniconda3/bin`` to your ``PATH``. If you already have this entry in your ``PATH``, simply reponse with 'no'. Responding with 'yes' will add another entry even if it exists resuling in a ``PATH`` that looks much like: ``~/miniconda3/bin:~/miniconda3/bin:[...]``.
 
+How do I reinstall Anaconda?
+=============================
+
+This assumes Anaconda3 has been installed to the default location (``/home/username/anaconda3``). We will refer to your home directory as ``~/`` from here on.
+
+.. code-block:: sh
+
+    # Make a backup of your existing installation if desired:
+    $ tar cfz /safe/place/anaconda3_old.tar.gz ~/anaconda3
+
+    # Remove anaconda3
+    $ rm -rf ~/anaconda3
+
+    # Download the Anaconda3 installer for your platform from: https://www.continuum.io/downloads
+    # (Note: Use the "COMMAND-LINE INSTALLER")
+
+    # Execute the installer (where VERSION is the version you downloaded, and  PLATFORM is one of Linux or MacOSX)
+    $ bash /path/to/Anaconda3-VERSION-PLATFORM-x86_64.sh
+
+The installer may offer to automatically edit ``~/.bash_profile`` and prepend ``~/anaconda3/bin`` to your ``PATH``. If you already have this entry in your ``PATH``, simply reponse with 'no'. Responding with 'yes' will add another entry even if it exists resuling in a ``PATH`` that looks much like: ``~/anaconda3/bin:~/anaconda3/bin:[...]``.
 
 Why am I being prompted by NumPy/SciPy with a MKL 30-day trial warning?
 =======================================================================
