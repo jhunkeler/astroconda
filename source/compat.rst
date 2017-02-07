@@ -14,7 +14,7 @@ If you spot a compatibility problem not listed here please let us know by sendin
 12/23/2016
 ==========
 
-AstroPy v1.3 fully deprecated calls to ``astropy.io.fits.new_table``. The following packages are known to be incompatiable with this release:
+AstroPy v1.3 fully deprecated calls to ``astropy.io.fits.new_table``. The following packages are known to be incompatible with this release:
 
   * ``calcos =< 3.1.8`` - Bugfix pending
   * ``costools <= 1.2.1`` - Bugfix pending

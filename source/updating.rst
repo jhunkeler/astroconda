@@ -25,7 +25,7 @@ Updating All Packages
 
     $ conda update -n astroconda --all
 
-This will update the ``stsci`` metapackage, as well all other packages installed in your enviroment. [1]_
+This will update the ``stsci`` metapackage, as well all other packages installed in your environment. [1]_
 
 This updates **all packages** regardless if they were installed from AstroConda, Continuum, Inc., or other third party repositories defined in ``$HOME/.condarc``.
 

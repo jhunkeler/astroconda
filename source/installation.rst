@@ -8,7 +8,7 @@ System Requirements
     - 64-bit Intel/AMD processor (x86_64)
     - 64-bit Linux (glibc ≥ 2.12)
     - Mac OS X (≥ 10.7)
-    - BASH or ZSH default shell environement (T/CSH is NOT supported)
+    - BASH or ZSH default shell environment (T/CSH is NOT supported)
 
 Prerequisites
 =============
@@ -40,14 +40,11 @@ If the path to ``conda`` is not returned, continue reading, otherwise skip ahead
 
 If you answered ``Y`` or ``Yes`` when prompted during installation to prepend Miniconda or Anaconda to your ``PATH``, and ``which conda`` did not return a path to ``conda``, execute ``source ~/.bash_profile`` and re-execute ``which conda``. If the path to ``conda`` appears, skip ahead to :ref:`configure_astroconda_channel`.
 
-For anyone that answered ``N`` or ``No``, you will need to add the ``bin`` directory containing ``conda`` to your ``PATH``. Please choose one of the following ``export`` lines that best matches your installation path. The ``2`` variant of Miniconda and Anaconda does not have a number associated with the installation directory.
-
-
-If you installed using the default path selected by the installer, but are not sure what the directory is called, run this:
+However, if you answered ``N`` or ``No`` when prompted, you will need to manually add the ``bin`` directory containing ``conda`` to your ``PATH``. If you installed Miniconda or Anaconda using the default path selected by the installer, but are not sure what the directory is named, use the following command:
 
 .. code-block:: sh
 
-    $ ls -d ~/\*conda?
+    $ ls -d ~/*conda?
     #[example output]
     /home/username/miniconda3
 
@@ -169,7 +166,7 @@ Additional Software Considerations
 
 While our channel provides a suite of scientific software packages that are known to work well together and are supported by engineers from STScI, by default, ``conda`` already has access to a hundreds of packages maintained directly by Continuum Analytics, Inc. AstroConda's package set relies heavily on Continuum for many of its own dependencies, so you may find it beneficial to explore what is available to you.
 
-Full documentation of the ``conda`` tool, covering topics ranging from installation, upgrading, and maintaing packages is available from its creators and maintainers: http://conda.pydata.org/docs/using/index.html.
+Full documentation of the ``conda`` tool, covering topics ranging from installation, upgrading, and maintaining packages is available from its creators and maintainers: http://conda.pydata.org/docs/using/index.html.
 
 Installing additional software into your AstroConda environment is as simple as:
 
@@ -178,7 +175,7 @@ Installing additional software into your AstroConda environment is as simple as:
     $ source activate astroconda
     $ conda install <name_of_pkg>
 
-Often, the fastest way to discover if a package exists in the ``conda`` ecosytem is to try searching for it with ``conda search <name_of_pkg>``. A comprehensive list of software directly installable from Continuum's default channel can be found here: http://repo.continuum.io/pkgs/.
+Often, the fastest way to discover if a package exists in the ``conda`` ecosystem is to try searching for it with ``conda search <name_of_pkg>``. A comprehensive list of software available directly from Continuum's default channel can be found here: http://repo.continuum.io/pkgs/.
 
 In addition to ``conda install`` the Python-standard tool ``pip`` is also available to install packages distributed through the Python Package Index (PyPI):
 
