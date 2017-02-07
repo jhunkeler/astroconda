@@ -11,7 +11,9 @@ What is the difference between Conda, Miniconda, Anaconda, and AstroConda?
 
 - **Anaconda** is distributed by Continuum Analytics, Inc. as a standalone installer, and provides a fully featured conda-based environment (i.e. ``conda``, ``python``, and commonly used utilities, libraries, and Python packages).
 
-- **AstroConda** is a collection of Conda packages, also known as a "Conda Channel", to be used with existing Miniconda and Anaconda installations via ``conda create``, ``conda install``, and ``conda update``. Package recipes are freely available on `GitHub <https://github.com/astroconda/astroconda-contrib>`_ and are maintained by the `Science Software Branch (SSB) <http://ssb.stsci.edu>`_ of the `Space Telescope Science Institute (STScI) <http://www.stsci.edu>`_.
+- **AstroConda** is a collection of Conda packages, also known as a "Conda Channel", to be used with existing Miniconda and Anaconda installations via ``conda create``, ``conda install``, and ``conda update``.
+
+Note: Package recipes are freely available on `GitHub <https://github.com/astroconda/astroconda-contrib>`_ and are maintained by the `Science Software Branch (SSB) <http://ssb.stsci.edu>`_ of the `Space Telescope Science Institute (STScI) <http://www.stsci.edu>`_.
 
 Why do you recommend installing Miniconda instead of Anaconda?
 ==============================================================
@@ -80,6 +82,13 @@ Conda does not support CSH (C-Shell). Please switch to a POSIX-compatible shell 
 
     STScI will not maintain a separate codebase of ``conda`` in order to implement CSH support. Feel free to create an issue with the `developers <http://github.com/conda/conda/issues>`_.
 
+What do you mean by Conda "root" environment?
+=============================================
+
+The root environment refers to the top-level directory structure created by the Miniconda or Anaconda installer. The package manager, Conda, resides under ``/home/username/*conda/bin``. So for example, if you execute ``source deactivate`` your ``PATH`` environment variable is reset to point to the root environment. Thus, installing software at this level will be installed in the root ``bin`` directory too.
+
+Please refrain from installing any software into the root environment with either ``pip`` or ``conda``. It is recommended to always create a new environment with ``conda create`` and install new software into it. It is far easier to delete a broken environment with ``conda env remove`` than it is to reinstall Miniconda or Anaconda in its entirety. Custom environments are safely abstracted away from the root and live under ``/home/username/*conda/envs/<name>``.
+
 I installed AstroConda packages into my [Mini/Ana]conda 'root' environment. What now?
 =====================================================================================
 
@@ -88,7 +97,7 @@ Please reinstall Miniconda (or Anaconda) from scratch. AstroConda uses ``source 
 To clarify, installing AstroConda packages directly into the 'root' may cause Miniconda (or Anaconda) itself to be come unstable. In addition to this, removing packages from this environment is tedious and will likely break your Anaconda installation if you are not careful. *Reinstalling from scratch is the safest option.*
 
 How do I reinstall Miniconda?
-=============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This assumes Miniconda3 has been installed to the default location (``/home/username/miniconda3``). We will refer to your home directory as ``~/`` from here on.
 
@@ -108,7 +117,7 @@ This assumes Miniconda3 has been installed to the default location (``/home/user
 The installer may offer to automatically edit ``~/.bash_profile`` and prepend ``~/miniconda3/bin`` to your ``PATH``. If you already have this entry in your ``PATH``, simply reponse with 'no'. Responding with 'yes' will add another entry even if it exists resuling in a ``PATH`` that looks much like: ``~/miniconda3/bin:~/miniconda3/bin:[...]``.
 
 How do I reinstall Anaconda?
-=============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This assumes Anaconda3 has been installed to the default location (``/home/username/anaconda3``). We will refer to your home directory as ``~/`` from here on.
 
