@@ -3,10 +3,11 @@ Pipeline Releases
 
 .. note::
 
+    - A working installation of Miniconda or Anaconda is required.
     - Python 2.x.x is not supported (unless noted otherwise).
     - 32-bit operating systems are not supported.
 
-Pipeline releases differ from the standard AstroConda distribution and serve a different purpose. The release files described below are immutable snapshots of STScI operational software, and can be used to replicate the environment used by STScI to perform mission-specific data processing. Be aware that upgrading packages with ``conda update [pkg]`` is not recommended as it will likely introduce unwanted bugs and/or break the environment all together.
+Pipeline releases differ from the standard software stack and serve a different purpose. The release files described below are immutable snapshots of STScI operational software, and can be used to replicate the environment used by STScI to perform mission-specific data processing. Be aware that upgrading packages with ``conda update [pkg]`` or ``conda update --all`` is not recommended as it will likely introduce unwanted bugs and/or break the environment all together.
 
 If you have any questions, comments, or concerns related to pipeline releases please feel free to contact help@stsci.edu
 
