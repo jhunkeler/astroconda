@@ -29,7 +29,7 @@ This will update the ``stsci`` metapackage, as well all other packages installed
 
 This updates **all packages** regardless if they were installed from AstroConda, Continuum, Inc., or other third party repositories defined in ``$HOME/.condarc``.
 
-(`ref <http://conda.pydata.org/docs/using/pkgs.html#package-update>`__)
+(`ref <http://conda.io/docs/using/pkgs.html#package-update>`__)
 
 
 Updating Packages Individually
@@ -75,7 +75,7 @@ Now the only thing left to do, is to tell Conda to install the previous release 
 
 At this point you should be back in business.
 
-(`ref <http://conda.pydata.org/docs/faq.html#managing-packages>`__)
+(`ref <http://conda.io/docs/faq.html#managing-packages>`__)
 
 
 Pinning Packages
@@ -92,7 +92,7 @@ Let's take the previous example one step further... Imagine ``stsci.tools`` is b
 
 From now on, future calls to ``conda update`` will omit ``stsci.tools`` while performing dependency resolution. However, a clear side-effect of this will also be losing the ability to update packages that depend strictly on version ``3.4.2``. Although this is not a permanent solution it can prove useful in a bad situation.
 
-(`ref <http://conda.pydata.org/docs/faq.html?highlight=pinning#pinning-packages>`__)
+(`ref <http://conda.io/docs/faq.html?highlight=pinning#pinning-packages>`__)
 
 
 .. rubric:: Footnotes

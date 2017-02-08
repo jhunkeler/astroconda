@@ -71,7 +71,7 @@ If you have taken the liberty of looking around the astroconda-contrib directory
 
 .. note::
 
-    This is not an full Conda packaging tutorial. For more information about creating recipes from scratch, please refer to the `conda-build documentation <http://conda.pydata.org/docs/build_tutorials/pkgs2.html>`_.
+    This is not an full Conda packaging tutorial. For more information about creating recipes from scratch, please refer to the `conda-build documentation <http://conda.io/docs/build_tutorials/pkgs2.html>`_.
 
     **Hint:** Investigate the contents of the recipes in astroconda-contrib. For most cases, copying an existing recipe and changing its values will suffice.
 

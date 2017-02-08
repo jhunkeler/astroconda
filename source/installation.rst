@@ -175,7 +175,7 @@ Additional Software Considerations
 
 While our channel provides a suite of scientific software packages that are known to work well together and are supported by engineers from STScI, by default, ``conda`` already has access to a hundreds of packages maintained directly by Continuum Analytics, Inc. AstroConda's package set relies heavily on Continuum for many of its own dependencies, so you may find it beneficial to explore what is available to you.
 
-Full documentation of the ``conda`` tool, covering topics ranging from installation, upgrading, and maintaining packages is available from its creators and maintainers: http://conda.pydata.org/docs/using/index.html.
+Full documentation of the ``conda`` tool, covering topics ranging from installation, upgrading, and maintaining packages is available from its creators and maintainers: http://conda.io/docs/using/index.html.
 
 Installing additional software into your AstroConda environment is as simple as:
 

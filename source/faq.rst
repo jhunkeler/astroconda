@@ -109,7 +109,7 @@ This assumes Miniconda3 has been installed to the default location (``/home/user
     # Remove Miniconda3
     $ rm -rf ~/miniconda3
 
-    # Download the Miniconda3 installer for your platform from: http://conda.pydata.org/miniconda.html
+    # Download the Miniconda3 installer for your platform from: http://conda.io/miniconda.html
 
     # Execute the installer (where PLATFORM is one of Linux or MacOSX)
     $ bash /path/to/Miniconda3-latest-PLATFORM-x86_64.sh
