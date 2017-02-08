@@ -2,7 +2,7 @@
 Updating
 ********
 
-Anaconda's package manager, Conda, will not automatically update unless a newer version of a package is detected during a routine package installation. Suffice to say, unless you keep your packages up to date with ``conda update``, the packages installed in your Anaconda distribution will remain relatively static.
+Conda, will not automatically update unless a newer version of a package is detected during a routine package installation. Suffice to say, unless you keep your packages up to date with ``conda update``, the packages installed in your environment will remain static.
 
 Updating AstroConda
 ===================
@@ -52,7 +52,7 @@ General Maintenance
 
 Keeping AstroConda up to date is important, but not nearly as important as keeping your 'root' (i.e. the base installation) updated as well. ``conda`` is like any other software project and it requires periodic refreshing to stay current with the latest changes. Failing to do this can (over time) cause side-effects such as, the inability to upgrade, install, remove, or search for packages.
 
-However, updating extremely old releases of ``conda`` to the latest version have been known to break Miniconda due to a variety of API changes in the code. If this happens to you, reinstalling Miniconda and regenerating your AstroConda environment is the fastest way to resolve the problem. Refer to the `FAQ <faq.html#how-do-i-reinstall-miniconda>`_ for more details.
+However, updating extremely old releases of ``conda`` to the latest version have been known to break Conda due to a variety of API changes in the code. If this happens to you, reinstalling the latest release of Miniconda or Anaconda and regenerating your AstroConda software environment is the fastest way to resolve the problem. Refer to the `FAQ <faq.html#how-do-i-reinstall-miniconda>`_ for more details.
 
 Downgrading Packages
 ====================

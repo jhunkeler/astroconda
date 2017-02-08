@@ -8,39 +8,46 @@ System Requirements
     - 64-bit Intel/AMD processor (x86_64)
     - 64-bit Linux (glibc ≥ 2.12)
     - Mac OS X (≥ 10.7)
-    - BASH or ZSH default shell environment (T/CSH is NOT supported)
+    - BASH or ZSH as your default shell environment (T/CSH is NOT supported)
 
 Prerequisites
 =============
 
-AstroConda is a third-party addon channel designed for use with the ``conda`` package management system, so therefore in order to install software provided by our channel, you must first install a basic Conda environment on your system. This can be achieved in multiple ways (described below). Our channel's software is compatible with both of the ``2`` and ``3`` variants of Continuum Analytics, Inc.'s ``Miniconda`` and ``Anaconda`` distributions (i.e. ``Miniconda2``, ``Miniconda3``, ``Anaconda2``, and ``Anaconda3``).
+AstroConda is a third-party addon channel designed for use with the Conda package management system, so therefore in order to install software provided by our channel, you must first install a basic Conda environment on your system. This can be achieved in multiple ways (described below). Our channel's software is compatible with both of the ``2`` and ``3`` variants of Continuum Analytics, Inc.'s Miniconda and Anaconda distributions (i.e. Miniconda2, Miniconda3, Anaconda2, and Anaconda3).
 
 Getting Conda - The choice is yours
 -----------------------------------
 
-Miniconda2 and Miniconda3 provide a bare-minimum ``conda`` root environment with Python 2.7 or Python 3.x respectfully. (*Recommended*)
+Miniconda2 and Miniconda3 provide a bare-minimum Conda root environment with Python 2.7 or Python 3.x respectfully. (*Recommended*)
 
-Anaconda2 and Anaconda3 are Continuum Analytics Inc.'s flagship products, and provide a full-featured ``conda`` root environment as well as hundreds of useful tools, libraries, and utilities by default.
+Anaconda2 and Anaconda3 are Continuum Analytics Inc.'s flagship products, and provide a full-featured Conda root environment as well as hundreds of useful tools, libraries, and utilities by default.
 
 Both of Continuum's official distributions support a variety of operating systems and architectures, however the AstroConda channel specifically provides packages for Linux and Apple OS X running on x86_64 Intel/AMD processors. It is important to note Microsoft Windows is not supported at this time.
 
-Now head over to **one** of the following sites and download a copy of the installer of your choosing:
+Now head over to **one** of the following sites and download a copy of the installer of your choice:
 
 - Download `Miniconda <https://conda.io/miniconda.html>`_
 - Download `Anaconda <https://www.continuum.io/downloads>`_ (OS X users should choose the command-line installer)
 
-No matter which medium you chose to install, after the installation is complete, be sure to double-check ``~/.bash_profile`` to ensure you have prepended Miniconda or Anaconda to your ``PATH``. Otherwise, you will be unable to successfully complete this guide.
+The installation method used for Miniconda and Anaconda are identical, however keep in mind the scripts are written in BASH (not SH), so therefore you *must* execute the installer using ``bash``:
+
+.. code-block:: sh
+
+    $ cd <download_directory_here>
+    $ bash <install_script_here>
+
+After the installation is complete double-check the bottom of ``~/.bash_profile`` to ensure Miniconda or Anaconda has been added to your ``PATH``. Otherwise, you will be unable to successfully complete this guide.
 
 
 Verifying your Conda Environment
 --------------------------------
 
 Execute the command: ``which conda``
-If the path to ``conda`` is not returned, continue reading, otherwise skip ahead to :ref:`configure_astroconda_channel`.
+If the path to ``conda`` (i.e. ``/home/username/miniconda3/bin/conda``), is not returned, continue reading, otherwise skip ahead to :ref:`configure_astroconda_channel`.
 
-If you answered ``Y`` or ``Yes`` when prompted during installation to prepend Miniconda or Anaconda to your ``PATH``, and ``which conda`` did not return a path to ``conda``, execute ``source ~/.bash_profile`` and re-execute ``which conda``. If the path to ``conda`` appears, skip ahead to :ref:`configure_astroconda_channel`.
+If you answered ``Y`` or ``Yes`` when prompted during installation to place Miniconda or Anaconda in your ``PATH``, and ``which conda`` still does not return a path leading back to ``conda``, go ahead and execute ``source ~/.bash_profile``, then re-execute ``which conda``. If the path to ``conda`` appears, skip ahead to :ref:`configure_astroconda_channel`.
 
-However, if you answered ``N`` or ``No`` when prompted, you will need to manually add the ``bin`` directory containing ``conda`` to your ``PATH``. If you installed Miniconda or Anaconda using the default path selected by the installer, but are not sure what the directory is named, use the following command:
+However, if you answered ``N`` or ``No`` when prompted, you will need to fix your ``PATH`` manually. If you installed Miniconda or Anaconda using the defaults selected by the installer, but are not sure what the directory is named, use the following command to find out:
 
 .. code-block:: sh
 
@@ -48,7 +55,7 @@ However, if you answered ``N`` or ``No`` when prompted, you will need to manuall
     #[example output]
     /home/username/miniconda3
 
-Now append **one of the following** ``export`` commands that best matches the output of the previous example to the bottom of ``~/.bash_profile`` using a plain-text editor:
+Now append **one of the following** ``export`` commands that best matches the output of `ls -d` above to the bottom of ``~/.bash_profile`` using a plain-text editor:
 
 .. code-block:: sh
 
@@ -57,7 +64,7 @@ Now append **one of the following** ``export`` commands that best matches the ou
     export PATH="~/anaconda/bin:$PATH"
     export PATH="~/anaconda3/bin:$PATH"
 
-At this point, either open an new terminal to assume the new environment with ``conda`` in your ``PATH``, or execute ``source ~/.bash_profile`` and continue to the next section.
+At this point, to assume the new environment with ``conda`` in your ``PATH``, open a new terminal or execute ``source ~/.bash_profile`` and continue to the next section.
 
 
 .. _configure_astroconda_channel:
@@ -65,16 +72,16 @@ At this point, either open an new terminal to assume the new environment with ``
 Configure Conda to use the Astroconda Channel
 =============================================
 
-In order to install packages directly from the AstroConda repository, you will need to configure Conda to do so.
+In order to install packages directly from the AstroConda channel you will need to append our URL to Conda's channel search path.
 
 .. code-block:: sh
 
     $ conda config --add channels http://ssb.stsci.edu/astroconda
     # Writes changes to ~/.condarc
 
-This command will append the AstroConda channel URL to Conda's channel search path. Be aware that adding additional `anaconda.org <https://anaconda.org>`_ or direct-url repositories can potentially effect the stability of AstroConda's run-time environment.
+Be aware that indiscriminately adding channels to your configuration, be it from `anaconda.org <https://anaconda.org>`_ or direct-URL, can potentially effect the stability of software in your run-time environment.
 
-For example, if you add a channel found on anaconda.org because it contains a software package you're interested in, but also provides the same software as AstroConda, it's possible you may lose track of where packages are coming from. If you decide to have multiple channels defined in your configuration and bugs begin to appear, it may be best to check their origin before issuing a support ticket to help@stsci.edu. ``conda list`` can be used to display such information about the packages installed in your environment.
+For example, if you add a channel found on anaconda.org because it contains a software package you're interested in, but it too provides the same software found in AstroConda, it's possible you may lose track of where packages are coming from. Or worse, the software you installed from the other channel was built incorrectly or did not account for a special case, so now the packages in your environment relying on this as a dependency could very well cease to function correctly. If you decide to have multiple channels defined in your configuration and bugs begin to appear, it may be best to check their origin before issuing a support ticket to help@stsci.edu. ``conda list`` can be used to display such information about the packages installed in your environment.
 
 
 Using the AstroConda Channel
