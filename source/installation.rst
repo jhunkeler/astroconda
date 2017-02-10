@@ -43,6 +43,7 @@ Verifying your Conda Environment
 --------------------------------
 
 Execute the command: ``which conda``
+
 If the path to ``conda`` (i.e. ``/home/username/miniconda3/bin/conda``), is not returned, continue reading, otherwise skip ahead to :ref:`configure_astroconda_channel`.
 
 If you answered ``Y`` or ``Yes`` when prompted during installation to place Miniconda or Anaconda in your ``PATH``, and ``which conda`` still does not return a path leading back to ``conda``, go ahead and execute ``source ~/.bash_profile``, then re-execute ``which conda``. If the path to ``conda`` appears, skip ahead to :ref:`configure_astroconda_channel`.
