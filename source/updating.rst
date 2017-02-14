@@ -51,46 +51,6 @@ Keeping AstroConda packages up to date is important, but not nearly as important
 
 Updating extremely old releases of Conda to the latest version have been known to break the 'root' environment due to a variety of API changes in the code. There is not much STScI can do about this as Conda itself is not our product, however if this happens to you, reinstalling the latest release of Miniconda or Anaconda, then regenerating your AstroConda software environment is the fastest way to resolve the problem. Refer to the `FAQ <faq.html#how-do-i-reinstall-miniconda>`_ for more details.
 
-Downgrading Packages
-====================
-
-Did a recent update break your code? For example, if a bug is introduced into ``stsci.tools``, you can, for example, easily downgrade it to a known-good version:
-
-.. code-block:: sh
-
-    $ conda search stsci.tools
-    .  3.4.0                  py35_6  http://ssb.stsci.edu/astroconda/linux-64
-    *  3.4.1                  py35_0  http://ssb.stsci.edu/astroconda/linux-64
-
-The ``*`` denotes the current version installed locally, while the ``.`` indicates Conda has cached that version of the package on your hard drive for quick-use. No prefix implies the package is neither cached, nor installed.
-
-Now the only thing left to do, is to tell Conda to install the previous release of the package:
-
-.. code-block:: sh
-
-    $ conda install stsci.tools=3.4.0
-
-At this point you will prompted to downgrade the package and hopefully be back in business. However, if you find yourself in this predicament please send an email to help@stsci.edu describing the situtation in detail so that we may either begin working on a bug fix release to accommodate you, or offer alternative solutions the problem.
-
-(`ref <http://conda.io/docs/faq.html#managing-packages>`__)
-
-
-Pinning Packages
-================
-
-.. caution:: Pinning packages has the potential to break Conda. Only pin packages as a last resort.
-
-Let's take the previous example one step further... Imagine ``stsci.tools`` is broken, and the hotfix release of ``3.4.2`` only partially solved the original issue. Now what? You still need to receive updates to other packages, but ``stsci.tools`` keeps trying to update back to ``3.4.2`` every time you touch ``conda update``.
-
-
-.. code-block:: sh
-
-    $ echo "stsci.tools <=3.4.0" > ${CONDA_PREFIX}/conda-meta/pinned
-
-From now on, future calls to ``conda update`` will omit ``stsci.tools`` while performing dependency resolution. However, a clear side-effect of this will also be losing the ability to update packages that depend strictly on version ``3.4.2``. Although this is not a permanent solution it can prove useful in a bad situation.
-
-(`ref <http://conda.io/docs/faq.html?highlight=pinning#pinning-packages>`__)
-
 
 .. rubric:: Footnotes
 
