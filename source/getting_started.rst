@@ -2,22 +2,12 @@
 Getting Started
 ###############
 
-
-System Requirements
-===================
-
-    - 64-bit Intel/AMD processor (x86_64)
-    - 64-bit Linux (glibc ≥ 2.12)
-    - Mac OS X (≥ 10.7)
-    - BASH or ZSH as your default shell environment (T/CSH is NOT supported)
-
-
-AstroConda is a third-party addon channel designed for use with the Conda package management system, so therefore in order to install software provided by our channel, you must first install a basic Conda environment on your system. This can be achieved in multiple ways (described below). Our channel's software is compatible with both of the ``2`` and ``3`` variants of Continuum Analytics, Inc.'s Miniconda and Anaconda distributions (i.e. Miniconda2, Miniconda3, Anaconda2, and Anaconda3).
-
 .. _getting_started_jump:
 
 Getting Conda - The choice is yours
 ===================================
+
+AstroConda is a third-party addon channel designed for use with the Conda package management system, so therefore in order to install software provided by our channel, you must first install a basic Conda environment on your system. This can be achieved in multiple ways (described below). Our channel's software is compatible with both of the ``2`` and ``3`` variants of Continuum Analytics, Inc.'s Miniconda and Anaconda distributions (i.e. Miniconda2, Miniconda3, Anaconda2, and Anaconda3).
 
 Miniconda2 and Miniconda3 provide a bare-minimum Conda root environment with Python 2.7 or Python 3.x respectfully. (*Recommended*)
 
