@@ -2,7 +2,7 @@
 Selecting a Software Stack
 ##########################
 
-A "stack" is a collection of software designed to target the various different use cases of our end-users. The three officially supported stacks are as follows:
+A "stack" is a collection of software designed to target the various use cases of our end-users. The three officially supported stacks are as follows:
 
 - :ref:`standard_install` provides:
     - The full compliment of STScI software and utilities
