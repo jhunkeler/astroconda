@@ -4,8 +4,8 @@ Getting Started
 
 .. _getting_started_jump:
 
-Getting Conda - The choice is yours
-===================================
+Installing Conda - The choice is yours
+======================================
 
 AstroConda is a third-party addon channel designed for use with the Conda package management system, so therefore in order to install software provided by our channel, you must first install a basic Conda environment on your system. This can be achieved in multiple ways (described below). Our channel's software is compatible with both of the ``2`` and ``3`` variants of Continuum Analytics, Inc.'s Miniconda and Anaconda distributions (i.e. Miniconda2, Miniconda3, Anaconda2, and Anaconda3).
 
@@ -28,6 +28,12 @@ The installation method used for Miniconda and Anaconda are identical, however k
     $ bash <install_script_here>
 
 After the installation is complete double-check the bottom of ``~/.bash_profile`` to ensure Miniconda or Anaconda has been added to your ``PATH``. Otherwise, you will be unable to successfully complete this guide.
+
+.. warning::
+
+    Conda requires BASH, or a BASH-compatible shell in order to function correctly. If your default shell environment is not BASH (see also, :ref:`system_requirements`), please execute ``bash -l`` before proceeding.
+
+    From this point forward any time you wish to use Conda's environment activation script (i.e. ``source activate <env_name>``), you will need to execute ``bash -l`` prior to doing so.
 
 
 Verifying your Conda Environment
