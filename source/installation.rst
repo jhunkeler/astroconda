@@ -2,6 +2,7 @@
 Selecting a Software Stack
 ##########################
 
+A "stack" is a collection of software designed to meet the needs of different groups of end-users with specific needs. The three officially supported stacks are as follows:
 
 - :ref:`standard_install` provides:
     - The full compliment of STScI software and utilities
@@ -14,12 +15,13 @@ Selecting a Software Stack
     - The data processing environment used by STScI operations and instrument teams
     - Python 3.x only
 
+
 .. _standard_install:
 
 Standard Software Stack (without IRAF)
 ======================================
 
-The package management system, Conda, is now configured to pull from our repository, so you may go ahead and install the ``stsci`` metapackage. This metapackage installs nearly all of the software provided by STScI in one shot.
+The package management system, Conda, is now configured to pull from our repository, so you may go ahead and install the ``stsci`` package. This package installs nearly all of the software provided by STScI in one shot.
 
 The following example generates a new conda environment named "astroconda", however this naming convention is merely a suggestion. Feel free to use a name that works best for you.
 
@@ -48,7 +50,7 @@ Legacy Software Stack (with IRAF)
 The maintainers of the AstroConda channel have limited resources to support :abbr:`IRAF (Image Reduction and Analysis Facility)`, but users that require the ability to run IRAF and PyRAF tasks may want to install it via AstroConda. For help with any issues that come up during installation or use, please visit the `PyRAF FAQ <http://www.stsci.edu/institute/software_hardware/pyraf/pyraf_faq>`_. **Linux users** please be sure to visit `this FAQ entry <faq.html#in-linux-how-do-i-install-iraf-s-32-bit-dependencies>`_ for a quick guide to installing IRAF's 32-bit dependencies.
 
 
-The package management system, Conda, is now configured to pull from our repository, so you may go ahead and install the ``stsci`` metapackage, as well as ``pyraf``, and finally ``iraf``. The ``stsci`` metapackage installs nearly all of the software provided by STScI in one shot, however if you prefer a slimmed down IRAF/PyRAF experience, feel free to omit it.
+The package management system, Conda, is now configured to pull from our repository, so you may go ahead and install the ``stsci`` package, as well as ``pyraf``, and finally ``iraf``. The ``stsci`` package installs nearly all of the software provided by STScI in one shot, however if you prefer a slimmed down IRAF/PyRAF experience, feel free to omit it.
 
 Due to Python 3.x incompatibilities present in several tasks, it is recommended to install IRAF alongside Python 2.7.
 
@@ -77,3 +79,4 @@ Pipeline Software Stack
 =======================
 
 Due to the nature of the pipeline software stack, the installation instructions have been consolidated under a separate section, :ref:`pipeline_install`.
+

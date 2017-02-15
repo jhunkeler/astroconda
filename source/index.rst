@@ -3,12 +3,13 @@ Welcome to AstroConda Channel's documentation!
 
 AstroConda is a free Conda channel maintained by the `Space Telescope Science Institute <http://www.stsci.edu/>`_ (STScI) in Baltimore, Maryland.  This channel provides tools and utilities required to process and analyze data from the Hubble Space Telescope (HST), James Webb Space Telescope (JWST), and others.
 
+.. _system_requirements:
+
 System Requirements
 -------------------
 
     - 64-bit Intel/AMD processor (x86_64)
-    - 64-bit Linux (glibc ≥ 2.12)
-    - Mac OS X (≥ 10.7)
+    - 64-bit Linux (glibc ≥ 2.12) or Mac OS X (≥ 10.7)
     - BASH or ZSH as your default shell environment (T/CSH is NOT supported)
 
 Powered by Conda

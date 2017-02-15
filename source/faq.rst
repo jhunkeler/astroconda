@@ -176,7 +176,7 @@ defined in the environment.
 How often are updates released?
 ===============================
 
-Updates to (STScI) software will be released as bugs are identified and squashed. The ``stsci-*`` metapackages, for example, provide "releases" (i.e. a set of software used by our internal pipelines). After installing a release it is then possible to upgrade to the latest out-of-band packages by simply running:
+Updates to (STScI) software will be released as bugs are identified and squashed. The ``stsci-*`` packages, for example, provide "releases" (i.e. a set of software used by our internal pipelines). After installing a release it is then possible to upgrade to the latest out-of-band packages by simply running:
 
 ``conda update -n astroconda --all``
 
