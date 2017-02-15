@@ -86,8 +86,7 @@ Go ahead and open ``meta.yaml`` with your favorite plain-text editor:
 
 .. caution::
 
-    It is *highly recommended* that you enable "tabs to spaces" for your editor. Tab widths are unpredictable and may
-     cause Conda's YAML parser to fail.
+    It is *highly recommended* that you enable "tabs to spaces" for your editor. Tab widths are unpredictable and may cause Conda's YAML parser to fail.
 
 .. code-block:: sh
 
