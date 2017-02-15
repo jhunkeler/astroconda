@@ -71,7 +71,7 @@ If you have taken the liberty of looking around the astroconda-contrib directory
 
 .. note::
 
-    This is not an full Conda packaging tutorial. For more information about creating recipes from scratch, please refer to the `conda-build documentation <http://conda.pydata.org/docs/build_tutorials/pkgs2.html>`_.
+    This is not an full Conda packaging tutorial. For more information about creating recipes from scratch, please refer to the `conda-build documentation <http://conda.io/docs/build_tutorials/pkgs2.html>`_.
 
     **Hint:** Investigate the contents of the recipes in astroconda-contrib. For most cases, copying an existing recipe and changing its values will suffice.
 
@@ -86,8 +86,7 @@ Go ahead and open ``meta.yaml`` with your favorite plain-text editor:
 
 .. caution::
 
-    It is *highly recommended* that you enable "tabs to spaces" for your editor. Tab widths are unpredictable and may
-     cause Conda's YAML parser to fail.
+    It is *highly recommended* that you enable "tabs to spaces" for your editor. Tab widths are unpredictable and may cause Conda's YAML parser to fail.
 
 .. code-block:: sh
 
@@ -190,7 +189,7 @@ As we can see below, ``sympy`` requires ``mpmath``, ``setuptools`` and ``python`
         - mpmath
         - python x.x
 
-What does the ``x.x`` imply exactly? This instructs ``conda build`` *not* to proceed unless ``python=[version]`` has been issued as an argument on the commandline. If ``x.x`` is omitted here, the recipe will choose the version of Python currently active in your environment. In most cases it is best to be explicit rather than implicit when it comes to defining version requirements in Conda.
+What does the ``x.x`` imply exactly? This instructs ``conda build`` *not* to proceed unless ``python=[version]`` has been issued as an argument on the command-line. If ``x.x`` is omitted here, the recipe will choose the version of Python currently active in your environment. In most cases it is best to be explicit rather than implicit when it comes to defining version requirements in Conda.
 
 The ``test`` section defines few useful lists, ``imports``, ``commands``, and ``requires``. While these are not *required* to be used in any given recipe, we do use them in AstroConda. The ``imports`` section is a list of Python module imports, the ``commands``
 are executed in a basic shell environment, and finally ``requires`` defines any extraneous packages to be installed into the environment before running the tests.
@@ -207,7 +206,7 @@ are executed in a basic shell environment, and finally ``requires`` defines any 
         #requires:
         #   - does not require any extra testing-related packages
 
-If ``sympy`` provided a commandline utility named ``sympy-show``, you would use the ``commands`` section to verify the utility's functionality. A simple example of this would be to output a usage statement.
+If ``sympy`` provided a command-line utility named ``sympy-show``, you would use the ``commands`` section to verify the utility's functionality. A simple example of this would be to output a usage statement.
 
 .. code-block:: sh
 

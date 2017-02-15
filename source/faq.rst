@@ -5,13 +5,15 @@ F.A.Q.
 What is the difference between Conda, Miniconda, Anaconda, and AstroConda?
 ==========================================================================
 
-- **Conda** is a userland environment and package management utility maintained by Continuum Analytics, Inc.
+- **Conda** is a user-land environment and package management utility maintained by Continuum Analytics, Inc.
 
 - **Miniconda** is distributed by Continuum Analytics, Inc. as a standalone installer, and provides a minimal conda-based environment (i.e. ``conda`` and ``python``)
 
 - **Anaconda** is distributed by Continuum Analytics, Inc. as a standalone installer, and provides a fully featured conda-based environment (i.e. ``conda``, ``python``, and commonly used utilities, libraries, and Python packages).
 
-- **AstroConda** is a collection of Conda packages, also known as a "Conda Channel", to be used with existing Miniconda and Anaconda installations via ``conda create``, ``conda install``, and ``conda update``. Package recipes are freely available on `GitHub <https://github.com/astroconda/astroconda-contrib>`_ and are maintained by the `Science Software Branch (SSB) <http://ssb.stsci.edu>`_ of the `Space Telescope Science Institute (STScI) <http://www.stsci.edu>`_.
+- **AstroConda** is a collection of Conda packages, also known as a "Conda Channel", to be used with existing Miniconda and Anaconda installations via ``conda create``, ``conda install``, and ``conda update``.
+
+Note: Package recipes are freely available on `GitHub <https://github.com/astroconda/astroconda-contrib>`_ and are maintained by the `Science Software Branch (SSB) <http://ssb.stsci.edu>`_ of the `Space Telescope Science Institute (STScI) <http://www.stsci.edu>`_.
 
 Why do you recommend installing Miniconda instead of Anaconda?
 ==============================================================
@@ -38,14 +40,14 @@ This error may occur if...
 - STScI is experiencing a network or power outage
 - The AstroConda package repository crashed or rebooted due to routine patching
 
-If you have verified your internet connection is functioning properly but our parent site (http://www.stsci.edu) is unresonsive, then feel free to try our mirror.
+If you have verified your internet connection is functioning properly but our parent site (http://www.stsci.edu) is unresponsive, then feel free to try our mirror.
 
 Currently there are two ways to access it:
 
 Using conda directly
 ^^^^^^^^^^^^^^^^^^^^
 
-The basic ``conda`` installation commands accept ``-c`` or ``--channel`` argument, which allows you to select a different resository to install packages from.
+The basic ``conda`` installation commands accept ``-c`` or ``--channel`` argument, which allows you to select a different repository to install packages from.
 
 .. code-block:: yaml
 
@@ -80,6 +82,13 @@ Conda does not support CSH (C-Shell). Please switch to a POSIX-compatible shell 
 
     STScI will not maintain a separate codebase of ``conda`` in order to implement CSH support. Feel free to create an issue with the `developers <http://github.com/conda/conda/issues>`_.
 
+What do you mean by Conda "root" environment?
+=============================================
+
+The root environment refers to the top-level directory structure created by the Miniconda or Anaconda installer. The package manager, Conda, resides under ``/home/username/*conda/bin``. So for example, if you execute ``source deactivate`` your ``PATH`` environment variable is reset to point to the root environment. Thus, installing software at this level will be installed in the root ``bin`` directory too.
+
+Please refrain from installing any software into the root environment with either ``pip`` or ``conda``. It is recommended to always create a new environment with ``conda create`` and install new software into it. It is far easier to delete a broken environment with ``conda env remove`` than it is to reinstall Miniconda or Anaconda in its entirety. Custom environments are safely abstracted away from the root and live under ``/home/username/*conda/envs/<name>``.
+
 I installed AstroConda packages into my [Mini/Ana]conda 'root' environment. What now?
 =====================================================================================
 
@@ -88,7 +97,7 @@ Please reinstall Miniconda (or Anaconda) from scratch. AstroConda uses ``source 
 To clarify, installing AstroConda packages directly into the 'root' may cause Miniconda (or Anaconda) itself to be come unstable. In addition to this, removing packages from this environment is tedious and will likely break your Anaconda installation if you are not careful. *Reinstalling from scratch is the safest option.*
 
 How do I reinstall Miniconda?
-=============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This assumes Miniconda3 has been installed to the default location (``/home/username/miniconda3``). We will refer to your home directory as ``~/`` from here on.
 
@@ -97,18 +106,18 @@ This assumes Miniconda3 has been installed to the default location (``/home/user
     # Make a backup of your existing installation if desired:
     $ tar cfz /safe/place/miniconda3_OLD.tar.gz ~/miniconda3
 
-    # Remove miniconda3
+    # Remove Miniconda3
     $ rm -rf ~/miniconda3
 
-    # Download the Miniconda3 installer for your platform from: http://conda.pydata.org/miniconda.html
+    # Download the Miniconda3 installer for your platform from: http://conda.io/miniconda.html
 
     # Execute the installer (where PLATFORM is one of Linux or MacOSX)
     $ bash /path/to/Miniconda3-latest-PLATFORM-x86_64.sh
 
-The installer may offer to automatically edit ``~/.bash_profile`` and prepend ``~/miniconda3/bin`` to your ``PATH``. If you already have this entry in your ``PATH``, simply reponse with 'no'. Responding with 'yes' will add another entry even if it exists resuling in a ``PATH`` that looks much like: ``~/miniconda3/bin:~/miniconda3/bin:[...]``.
+The installer may offer to automatically edit ``~/.bash_profile`` and prepend ``~/miniconda3/bin`` to your ``PATH``. If you already have this entry in your ``PATH``, simply respond with 'no'. Responding with 'yes' will add another entry even if it exists resulting in a ``PATH`` that looks much like: ``~/miniconda3/bin:~/miniconda3/bin:[...]``.
 
 How do I reinstall Anaconda?
-=============================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This assumes Anaconda3 has been installed to the default location (``/home/username/anaconda3``). We will refer to your home directory as ``~/`` from here on.
 
@@ -126,7 +135,7 @@ This assumes Anaconda3 has been installed to the default location (``/home/usern
     # Execute the installer (where VERSION is the version you downloaded, and  PLATFORM is one of Linux or MacOSX)
     $ bash /path/to/Anaconda3-VERSION-PLATFORM-x86_64.sh
 
-The installer may offer to automatically edit ``~/.bash_profile`` and prepend ``~/anaconda3/bin`` to your ``PATH``. If you already have this entry in your ``PATH``, simply reponse with 'no'. Responding with 'yes' will add another entry even if it exists resuling in a ``PATH`` that looks much like: ``~/anaconda3/bin:~/anaconda3/bin:[...]``.
+The installer may offer to automatically edit ``~/.bash_profile`` and prepend ``~/anaconda3/bin`` to your ``PATH``. If you already have this entry in your ``PATH``, simply respond with 'no'. Responding with 'yes' will add another entry even if it exists resulting in a ``PATH`` that looks much like: ``~/anaconda3/bin:~/anaconda3/bin:[...]``.
 
 Why am I being prompted by NumPy/SciPy with a MKL 30-day trial warning?
 =======================================================================
@@ -167,7 +176,7 @@ defined in the environment.
 How often are updates released?
 ===============================
 
-Updates to (STScI) software will be released as bugs are identified and squashed. The ``stsci-*`` metapackages, for example, provide "releases" (i.e. a set of software used by our internal pipelines). After installing a release it is then possible to upgrade to the latest out-of-band packages by simply running:
+Updates to (STScI) software will be released as bugs are identified and squashed. The ``stsci-*`` packages, for example, provide "releases" (i.e. a set of software used by our internal pipelines). After installing a release it is then possible to upgrade to the latest out-of-band packages by simply running:
 
 ``conda update -n astroconda --all``
 
@@ -201,7 +210,7 @@ If you are already using AstroConda under a Python 2 environment, you may simply
 Why is IRAF/PyRAF less functional under Python 3?
 =================================================
 
-The Python code in ``stsdas``, for example, is targeted specifically for Python 2.7 and earlier. If the demand for Python3 support under IRAF is great enough we may be able to pull our resources to accommodate the community. It is recommended to install IRAF into its own environment under Python 2.7:
+The Python code in ``stsdas``, for example, is targeted specifically for Python 2.7 and earlier. If the demand for Python 3.x support under IRAF is great enough we may be able to pull our resources to accommodate the community. It is recommended to install IRAF into its own environment under Python 2.7:
 
 ``conda create -n iraf27 python=2.7 iraf pyraf stsci && source activate iraf27``
 

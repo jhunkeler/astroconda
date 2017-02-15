@@ -58,7 +58,7 @@ Miniconda & Anaconda (Continuum Analytics, Inc.)
 
 **Miniconda**
 
-- http://conda.pydata.org/miniconda.html
+- http://conda.io/miniconda.html
 
 **Anaconda**
 
@@ -77,15 +77,15 @@ Conda
 
 **General Documentation**
 
-- http://conda.pydata.org/docs/
+- http://conda.io/docs/
 
 **Build Documentation**
 
-- http://conda.pydata.org/docs/building/build.html
+- http://conda.io/docs/building/build.html
 
 **Environment Management Documentation**
 
-- http://conda.pydata.org/docs/using/envs.html
+- http://conda.io/docs/using/envs.html
 
 **Support**
 
