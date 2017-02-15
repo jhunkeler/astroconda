@@ -85,6 +85,41 @@ From now on, future calls to ``conda update`` will omit ``stsci.tools`` while pe
 
 (`ref <http://conda.io/docs/faq.html?highlight=pinning#pinning-packages>`__)
 
+Removing a Conda Environment
+============================
+
+It is possible to remove a Conda environment by running:
+
+.. code-block:: sh
+
+    $ conda env remove -n <env_name>
+
+Let's assume you've created a small test environment, "simple", with only a few packages you are interested in, such as ``drizzlepac`` and ``hstcal``.
+
+.. code-block:: sh
+
+    $ conda create -n simple drizzlepac hstcal
+    $ source activate simple
+
+You've played around for a bit, maybe calibrated some data or checked out a new feature, but at this point you've decided you no longer want the "simple" environment anymore. So you delete it:
+
+.. code-block:: sh
+
+    $ source deactivate
+    $ conda env remove -n simple
+
+And then you quickly verify your "simple" environment no longer exists using ``conda env list``:
+
+.. code-block:: sh
+
+    $ conda env list
+    # ["simple" is not listed]
+    astroconda               /home/username/miniconda3/envs/astroconda
+    iraf27                   /home/username/miniconda3/envs/iraf27
+    2016.2                   /home/username/miniconda3/envs/2016.2
+    root                  *  /home/username/miniconda3
+
+
 .. rubric:: Footnotes
 
 .. [#archnote] Intel x86_64 architecture
