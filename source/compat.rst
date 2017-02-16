@@ -15,7 +15,7 @@ If you spot a compatibility problem not listed here please let us know by sendin
 
 NumPy v1.12.0 modified the way array slicing is handled and triggered a regression in the ``acstools`` package:
 
- * ``acstools <= 2.0.6`` - Bugfix pending
+ * ``acstools <= 2.0.6`` - 2.0.7 released (2/16/2017)
 
 
 The traceback message to be aware of is as follows:
@@ -26,6 +26,10 @@ The traceback message to be aware of is as follows:
 
 
 Recommended user actions:
+
+  * Upgrade ``acstools`` to version 2.0.7 (i.e. ``conda update acstools``)
+
+Alternative user actions:
 
   * Downgrade ``numpy`` to version 1.11 (i.e. ``conda install numpy=1.11``)
 
