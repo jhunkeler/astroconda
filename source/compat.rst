@@ -9,6 +9,35 @@ If you spot a compatibility problem not listed here please let us know by sendin
 .. note::
 
   **You may be affected by an issue if you have updated your AstroConda environment on or after the dates listed in each section below.**
+  
+2017-05-02  
+==========
+
+A collection of errant release candidate packages were published to the AstroConda public channel (http://ssb.stsci.edu/astroconda) on Friday, Apr 4, 2017 around 3:45pm and remained available for download until 10:30am on Tuesday, May 2, 2017. If you updated/upgraded any of the following packages during that window, you may have retrieved and installed software which is unsuitable for use due to untested behavior.
+
+The affected packages:
+
++--------------------+----------------------------+
+|  Errant package    | <package>=<goodversion>    |
++====================+============================+
+| calcos-3.2.1       | calcos=3.1.8               |
++--------------------+----------------------------+
+| crds-7.1.1         | crds=7.1.0                 |
++--------------------+----------------------------+
+| drizzlepac-2.1.14  | drizzlepac=2.1.13          |
++--------------------+----------------------------+
+| hstcal-1.2.0rc1    | hstcal=1.1.1               |
++--------------------+----------------------------+
+| stsci.tools-3.4.9  | stsci.tools=3.4.7          |
++--------------------+----------------------------+
+| stwcs-1.3.2rc1     | stwcs=1.2.5                |
++--------------------+----------------------------+
+| wfc3tools-1.3.5rc1 | wfc3tools=1.3.4            |
++--------------------+----------------------------+
+
+If any of these errant packages appear in a ``conda list`` of your environment, please revert to the last known-good release version by issuing a ``conda install <package>=<goodversion>`` for each package.
+
+We apologize for any inconvenience introduced by this unintended sofware release.
 
 
 2017-02-11
