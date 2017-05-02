@@ -13,7 +13,7 @@ If you spot a compatibility problem not listed here please let us know by sendin
 2017-05-02  
 ==========
 
-A collection of errant release candidate packages were published to the AstroConda public channel (http://ssb.stsci.edu/astroconda) on Friday, Apr 4, 2017 around 3:45pm and remained available for download until 10:30am on Tuesday, May 2, 2017. If you updated/upgraded any of the following packages during that window, you may have retrieved and installed software which is unsuitable for use due to untested behavior.
+A collection of errant release candidate packages were published to the AstroConda public channel (http://ssb.stsci.edu/astroconda) on Friday, Apr 28, 2017 around 3:45pm and remained available for download until 10:30am on Tuesday, May 2, 2017. If you updated/upgraded any of the following packages during that window, you may have retrieved and installed software which is unsuitable for use due to untested behavior.
 
 The affected packages:
 
