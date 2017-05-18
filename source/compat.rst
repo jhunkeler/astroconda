@@ -4,6 +4,17 @@ Compatibility Notices
 
 As the Conda package ecosystem evolves and third-party software updates are released by Continuum and other providers, this may interfere with the stability of other codebases, such as STScI's software. This page will proactively chronicle such events as they occur as well as provide workarounds to these issues.
 
+Problematic Conda Versions
+==========================
+
+These versions of the conda package and environment management tool itself are known to cause problems when installing Astroconda packages, including pipeline environments. They are to be avoided if at all possible. ``conda --version`` will display the version you have installed.
+
++----------------------------+
+| Avoid use of Conda Version |
++============================+
+| 4.1.6                      |
++----------------------------+
+
 If you spot a compatibility problem not listed here please let us know by sending an email to `help[at]stsci.edu`.
 
 .. note::
