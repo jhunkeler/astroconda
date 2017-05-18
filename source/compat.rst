@@ -15,6 +15,20 @@ These versions of the conda package and environment management tool itself are k
 | 4.1.6                      |
 +----------------------------+
 
+If you have an indicated version of conda installed you may want to upgrade to a newer version with 
+
+``conda update conda``
+
+Once completed, check that the newly installed version is not indicated above as a problematic version. If it is indicated, you may have to downgrade to a previous version of conda in order to obtain one that has not been identified problematic.
+
+``conda search conda`` 
+
+will display a list of all versions of conda available. Select a version from the search list that does not appear in the table above and run 
+
+``conda install conda=<version>``.
+
+-----------
+
 If you spot a compatibility problem not listed here please let us know by sending an email to `help[at]stsci.edu`.
 
 .. note::
