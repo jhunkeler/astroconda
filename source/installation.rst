@@ -85,6 +85,22 @@ To deactivate the "iraf27" environment, close your terminal window or run:
     $ source deactivate
 
 
+Gemini - Data Processing Software
+---------------------------------
+
+To install Gemini IRAF:
+
+.. code-block:: sh
+
+        $ conda create -n gemini python=2.7 iraf-all pyraf-all stsci gemini
+
+If you want only the minimum needed to run Gemini IRAF, you may replace the last four arguments with the following:
+
+.. code-block:: sh
+
+        $ conda create -n python=2.7 gemini iraf.gemini iraf-x11 pyraf ds9
+
+
 .. _pipeline_install_jump:
 
 Pipeline Software Stack
