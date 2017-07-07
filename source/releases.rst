@@ -82,7 +82,7 @@ OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-osx-py
 Continuous Integration
 ======================
 
-This example BASH function is provided as a starting point for advanced users hooking our pipeline(s) into their continuous integration environment. This installation method is unsupported and your mileage may vary. Use at your own risk.
+This example BASH function is provided as a starting point for advanced users hooking up pipeline(s) in their continuous integration environments. This installation method is unsupported and your mileage may vary. Use at your own risk.
 
 .. code-block:: sh
 
