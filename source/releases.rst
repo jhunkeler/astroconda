@@ -54,8 +54,8 @@ HST Data Processing (HSTDP)
 ========  ======  ===
 PLATFORM  Python  URL
 ========  ======  ===
-Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-linux-py35.2.txt
-OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-osx-py35.2.txt
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-linux-py35.final.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-osx-py35.final.txt
 ========  ======  ===
 
 2016.2
@@ -64,8 +64,8 @@ OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-osx-py
 ========  ======  ===
 PLATFORM  Python  URL
 ========  ======  ===
-Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.2/hstdp-2016.2-linux-py35.2.txt
-OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.2/hstdp-2016.2-osx-py35.2.txt
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.2/hstdp-2016.2-linux-py35.final.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.2/hstdp-2016.2-osx-py35.final.txt
 ========  ======  ===
 
 2017.2
@@ -82,7 +82,7 @@ OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-osx-py
 Continuous Integration
 ======================
 
-This example BASH function is provided as a starting point for advanced users hooking up pipeline(s) in their continuous integration environments. This installation method is unsupported and your mileage may vary. Use at your own risk.
+This example BASH function is provided as a starting point for advanced users hooking up the pipeline(s) in their continuous integration environments. This installation method is unsupported and your mileage may vary. Use at your own risk.
 
 .. code-block:: sh
 
