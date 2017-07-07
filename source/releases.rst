@@ -54,8 +54,8 @@ HST Data Processing (HSTDP)
 ========  ======  ===
 PLATFORM  Python  URL
 ========  ======  ===
-Linux     3.5     http://ssb.stsci.edu/conda/hstdp-2016.1/hstdp-2016.1-linux-py35.2.txt
-OS X      3.5     http://ssb.stsci.edu/conda/hstdp-2016.1/hstdp-2016.1-osx-py35.2.txt
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-linux-py35.2.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-osx-py35.2.txt
 ========  ======  ===
 
 2016.2
@@ -64,8 +64,8 @@ OS X      3.5     http://ssb.stsci.edu/conda/hstdp-2016.1/hstdp-2016.1-osx-py35.
 ========  ======  ===
 PLATFORM  Python  URL
 ========  ======  ===
-Linux     3.5     http://ssb.stsci.edu/conda/hstdp-2016.2/hstdp-2016.2-linux-py35.2.txt
-OS X      3.5     http://ssb.stsci.edu/conda/hstdp-2016.2/hstdp-2016.2-osx-py35.2.txt
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.2/hstdp-2016.2-linux-py35.2.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.2/hstdp-2016.2-osx-py35.2.txt
 ========  ======  ===
 
 2017.2
@@ -79,19 +79,73 @@ OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-osx-py
 ========  ======  ===
 
 
-Release Schema
-==============
+Continuous Integration
+======================
 
-If you wish to write shell scripts to manage your local pipeline installations, this may be of interest to you:
+This example BASH function is provided as a starting point for advanced users hooking our pipeline(s) into their continuous integration environment. This installation method is unsupported and your mileage may vary. Use at your own risk.
 
 .. code-block:: sh
 
-    RELEASE_HOME=http://ssb.stsci.edu/releases
+    function get_pipeline()
+    {
+        # Do we have enough arguments?
+        if [[ $# < 3 ]]; then
+            echo "Not enough arguments."
+            return 1
+        fi
 
-    #               hstdp 2016  1
-    #               ^     ^     ^
-    RELEASE_PARENT=$NAME-$YEAR.$BUILD
+        # Setup basic argument list     & Example Input(s)
+        local conda_env="$1"            # hst_env
+        local name="$2"                 # hstdp, ...
+        local build="$3"                # 2017.2, 2016.2 ...
+        local python_version="$4"       # py[35, 27, ...]
+        local iteration="$5"            # final | post[0, 1, 2, ...]
 
-    #                              linux     py35            final|post#
-    #                              ^         ^               ^
-    RELEASE_CHILD=$RELEASE_PARENT-$PLATFORM-$PYTHON_VERSION.$ITERATION.txt
+        # Detect platform
+        local _platform=$(uname -s)
+        local platform=""
+
+        # Convert platform string to match file naming convention
+        if [[ ${_platform} == Linux ]]; then
+            platform="linux"
+        elif [[ ${_platform} == Darwin ]]; then
+            platform="osx"
+        else
+            echo "Unsupported platform: ${_platform}"
+            return 1
+        fi
+        unset _platform
+
+        # Handle optional arguments.
+        if [[ -z ${python_version} ]]; then
+            # Notice the "py" prefix and condensed version here
+            python_version="py35"
+        fi
+
+        if [[ -z ${iteration} ]]; then
+            iteration="final"
+        fi
+
+        # Assemble pipeline spec file URL
+        local ac_root="http://ssb.stsci.edu/releases"
+        local ac_base="${ac_root}/${name}/${build}"
+        local ac_spec="${name}-${build}-${platform}-${python_version}.${iteration}.txt"
+        local ac_url="${ac_base}/${ac_spec}"
+
+        # Perform installation
+        conda create -q -n "${conda_env}" --file "${ac_url}"
+        return $?
+    }
+
+    #
+    # Usage example:
+    #
+
+    # Silently generate a pipeline environment called "hst_env"
+    get_pipeline hst_env hstdp 2017.2
+
+    # Enter environment
+    source activate hst_env
+
+    # ... do work ...
+    # EOF
