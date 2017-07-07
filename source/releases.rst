@@ -68,6 +68,17 @@ Linux     3.5     http://ssb.stsci.edu/conda/hstdp-2016.2/hstdp-2016.2-linux-py3
 OS X      3.5     http://ssb.stsci.edu/conda/hstdp-2016.2/hstdp-2016.2-osx-py35.2.txt
 ========  ======  ===
 
+2017.2
+++++++
+
+========  ======  ===
+PLATFORM  Python  URL
+========  ======  ===
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-linux-py35.final.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-osx-py35.final.txt
+========  ======  ===
+
+
 Release Schema
 ==============
 
@@ -75,12 +86,12 @@ If you wish to write shell scripts to manage your local pipeline installations, 
 
 .. code-block:: sh
 
-    RELEASE_HOME=http://ssb.stsci.edu/conda
+    RELEASE_HOME=http://ssb.stsci.edu/releases
 
     #               hstdp 2016  1
     #               ^     ^     ^
     RELEASE_PARENT=$NAME-$YEAR.$BUILD
 
-    #                              linux     py35            2
+    #                              linux     py35            final|post#
     #                              ^         ^               ^
     RELEASE_CHILD=$RELEASE_PARENT-$PLATFORM-$PYTHON_VERSION.$ITERATION.txt
