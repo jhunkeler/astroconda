@@ -30,7 +30,7 @@ Example
 .. code-block:: sh
 
     conda create -n demo_2016.1 \
-        --file http://ssb.stsci.edu/conda/hstdp-2016.1/hstdp-2016.1-linux-py35.2.txt
+        --file http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-linux-py35.0.txt
     source activate demo_2016.1
 
 The URL used here will not be updated to reflect the latest iteration available. Please consult the :ref:`files` section to ensure you are installing the correct release.
