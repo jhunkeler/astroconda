@@ -35,6 +35,7 @@ If you spot a compatibility problem not listed here please let us know by sendin
 
   **You may be affected by an issue if you have updated your AstroConda environment on or after the dates listed in each section below.**
 
+
 2017-05-24
 ==========
 
@@ -138,7 +139,7 @@ Alternative user action:
 AstroPy v1.3 fully deprecated calls to ``astropy.io.fits.new_table``.
 The following packages are known to be incompatible with this release:
 
-  * ``calcos <= 3.1.8`` - Bugfix pending
+  * ``calcos <= 3.1.8`` - 3.2.1 released (Jul 06, 2017)
   * ``costools <= 1.2.1`` - Bugfix pending
   * ``fitsblender <= 0.2.6`` - 0.3.0 released (Jan 17, 2017)
 
