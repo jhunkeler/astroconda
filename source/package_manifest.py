@@ -11,13 +11,13 @@ except ImportError:
 from pprint import pprint
 
 ARCHITECTURE = [ 'linux-64', 'osx-64']
-METAPACKAGES = [('stsci', '1.0.1'),
-                ('stsci-data-analysis', '1.0.0'),
-                ('stsci-hst', '1.0.4'),
-                ('stsci-jwst', '1.0.0')]
-REPODATA_URL='http://ssb.stsci.edu/astroconda/{arch}/repodata.json'
-#REPODATA_URL='http://ssb.stsci.edu/conda-dev/{arch}/repodata.json'
+METAPACKAGES = [('stsci', '3.0.0'),
+                ('stsci-data-analysis', '2.0.2'),
+                ('stsci-hst', '3.0.0'),
+                ('iraf-all', '1.0'),
+                ('pyraf-all', '1.0')]
 
+REPODATA_URL='http://ssb.stsci.edu/astroconda/{arch}/repodata.json'
 MESSAGE = """
 Packaging reference key:
 
@@ -47,8 +47,6 @@ def get_repodata(architecture):
 
 def generate_manifest():
         python_versions = dict(
-            py27='2.7',
-            py34='3.4',
             py35='3.5'
         )
 
@@ -67,14 +65,17 @@ def generate_manifest():
                         if mpkg == repo_data[arch][key]['name']:
                             if mpkg_version == repo_data[arch][key]['version']:
                                 metapackages.append(('-'.join([value['name'], value['version']]), value['build'], value['depends']))
+                                break
 
                 print('{arch} metapackages'.format(arch=arch), file=pfile)
                 print('------------------------\n\n', file=pfile)
 
-                metapackages = sorted(metapackages, key=lambda k: k[0])
+                #metapackages = sorted(metapackages, key=lambda k: k[0])
                 for name, build, dependencies in metapackages:
-                    print('- **{name} ({python})**\n'.format(name=name, python=build), file=pfile)
+                    print('- **{name}**\n'.format(name=name), file=pfile)
                     for pkg in dependencies:
+                        if pkg.split()[0] == 'python':
+                            continue
                         print('    - {:<20s}\n'.format(pkg), file=pfile)
 
                 print('{arch} packages'.format(arch=arch), file=pfile)
