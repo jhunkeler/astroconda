@@ -48,14 +48,26 @@ HST Data Processing (HSTDP)
 
 *HSTDP* was previously known as *OPUS*.
 
-2016.1
+This list is in reverse chronological order, with the most recent release appearing first and older ones beneath.
+
+2017.2a
++++++++
+
+========  ======  ===
+PLATFORM  Python  URL
+========  ======  ===
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2017.2a/hstdp-2017.2a-linux-py35.final.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2017.2a/hstdp-2017.2a-osx-py35.final.txt
+========  ======  ===
+
+2017.2
 ++++++
 
 ========  ======  ===
 PLATFORM  Python  URL
 ========  ======  ===
-Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-linux-py35.final.txt
-OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-osx-py35.final.txt
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-linux-py35.final.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-osx-py35.final.txt
 ========  ======  ===
 
 2016.2
@@ -68,15 +80,19 @@ Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.2/hstdp-2016.2-linux-
 OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.2/hstdp-2016.2-osx-py35.final.txt
 ========  ======  ===
 
-2017.2
+2016.1
 ++++++
 
 ========  ======  ===
 PLATFORM  Python  URL
 ========  ======  ===
-Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-linux-py35.final.txt
-OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2017.2/hstdp-2017.2-osx-py35.final.txt
+Linux     3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-linux-py35.final.txt
+OS X      3.5     http://ssb.stsci.edu/releases/hstdp/2016.1/hstdp-2016.1-osx-py35.final.txt
 ========  ======  ===
+
+
+
+
 
 
 Continuous Integration
